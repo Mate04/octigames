@@ -1,0 +1,103 @@
+.navbar {
+  background-color: #002D55; /* Color de fondo de la barra de navegación */
+  width: 100%;
+}
+.navbar ul {
+  list-style-type: none; /* Elimina los puntos de la lista */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  padding: 10px 5px;
+}
+.navbar li {
+  float: right;
+  font-size: 20px; /* Hace que los elementos de la lista floten a la derecha */
+}
+.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-radius: 10px;
+}
+.navbar li a:hover {
+  background-color: #002240; /* Color de fondo cuando se pasa el mouse sobre un enlace */
+}
+
+.box{
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+
+/* Search 1 - bg change*/
+.container-1{
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+.search{
+  margin: 0 14px;
+}
+.container-1 input#search{
+  height: 50px;
+  background: #eef8ff;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #262626;
+  padding-left: 45px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 5px;
+  border-radius: 50px;
+  
+  -webkit-transition: all .55s ease;
+  -moz-transition: all .55s ease;
+  -ms-transition: all .55s ease;
+  -o-transition: all .55s ease;
+  transition: all .55s ease;
+}
+
+.container-1 input#search::-webkit-input-placeholder {
+   color: #65737e;
+}
+.container-1 input#search:-moz-placeholder { /* Firefox 18- */
+   color: #65737e;  
+}
+.container-1 input#search::-moz-placeholder {  /* Firefox 19+ */
+   color: #65737e;  
+}
+.container-1 input#search:-ms-input-placeholder {  
+   color: #65737e;  
+}
+
+.container-1 .icon{
+  position: absolute;
+  top: 50%;
+  margin-left: 17px;
+  margin-top: 17px;
+  z-index: 1;
+  color: #4f5b66;
+}
+
+/* ANIMATION EFFECTS */
+.container-1 input#search:focus, .container-1 input#search:active{
+  outline:none;
+  background: #ffffff;
+}
+.search{
+  font-family: 'Inter', sans-serif;
+  font-family: 'Modak', system-ui;
+}
+
+.logo img {
+  width: 100%;
+  height: 500px;
+  object-fit: contain
+}
+.li-a-img{
+  width: 400px;
+  height: 140px;
+  object-fit: contain;
+}

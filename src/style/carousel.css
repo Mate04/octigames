@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Modak&display=swap');
+
+
+.react-multi-carousel-track {
+    gap:10px;
+}
+
+.titulo {
+  align-self: center; /* Centra el título verticalmente */
+  text-align: center; /* Centra el texto horizontalmente */
+  font-family: 'Inter', sans-serif;
+  font-family: 'Modak', system-ui;
+}
+.titulo div {
+  font-size: 40px; /* Tamaño de fuente más grande */
+  letter-spacing: 3px;
+  color: white;
+   /* Texto en negrita */
+}
+
+.react-multi-carousel-list  {
+  padding: 10px 0;
+}

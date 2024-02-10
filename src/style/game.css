@@ -1,0 +1,50 @@
+.container{
+    display: flex;
+    width: 100%;
+    gap: 50px;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+.cuadrado {
+    margin: 5px 0px;
+    height: 650px;
+    width: 60%;
+    background: blue;
+  }
+  
+.rectangulo1, .rectangulo3 {
+    background-color: blueviolet;
+    width: 15%; /* La mitad del ancho del segundo cuadrado */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.rectangulo1 div{
+    border-radius: 10px;
+    width: 100%;
+    background: red;
+}
+
+.add-left{
+    height: 80%;
+}
+.home{
+display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;
+  position: relative;
+}
+.imagen {
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  object-fit: cover; 
+}
+.link-qsy{
+    display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+}

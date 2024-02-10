@@ -1,0 +1,19 @@
+.banner {
+    border: 1px solid #ccc;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    
+}
+.rectangulo3 {
+    align-items: center;
+    justify-content: center;
+}
+.add-left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
