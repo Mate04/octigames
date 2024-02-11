@@ -1,0 +1,9 @@
+.contenidoJuego {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.frame {
+    height: 100%;
+    width: 80%;
+}
