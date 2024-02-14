@@ -3,8 +3,11 @@ import '../style/carousel.css'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Card from './card'
+import { useState,useEffect } from 'react';
+export default function Categoria({nombreCategoria = null, resultados}) {
+  
+  
 
-export default function Categoria({nombreCategoria, resultados}) {
   if (!resultados){
     <div>cargando</div>
   }
@@ -16,7 +19,7 @@ export default function Categoria({nombreCategoria, resultados}) {
         Md5: resultado.Md5,
         Height: resultado.Height,
         Width: resultado.Width,
-        ThirdAssetElement: resultado.Asset[2],
+        ThirdAssetElement: resultado.Asset.filter(url => url.includes('512x512'))[0],
         CategoryList: resultado.Category,
         Tags: resultado.Tag
       };
@@ -54,13 +57,43 @@ export default function Categoria({nombreCategoria, resultados}) {
               items: 1
             }
           };
-    
+          const [rtl, setRtl] = useState(false);
+          const [autoPlaySpeed, setAutoPlaySpeed] = useState(3000);
+          const [slidesToSlide, setSlidesToSlide] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const randomRtl = Math.random() < 0.5;
+      setRtl(randomRtl);
+
+      const randomSpeed = Math.floor(Math.random() * (5000 - 3000 + 1)) + 3000; // Entre 3000 y 5000
+      setAutoPlaySpeed(randomSpeed);
+
+      const randomSlidesToSlide = Math.floor(Math.random() * (3 - 1 + 1)) + 1; // Entre 1 y 3
+      setSlidesToSlide(randomSlidesToSlide);
+    }, autoPlaySpeed-0.2);
+
+    return () => clearInterval(interval);
+  }, [autoPlaySpeed]);
+              
   return (
     <>
-    <div className="titulo">
-        <div>{nombreCategoria === null ? 'Mis Juegos' : nombreCategoria}</div>
-    </div>
-    <Carousel responsive={responsive} infinite={true}>
+    {nombreCategoria === null ? 
+     <div className="titulo" id={'mis-juegos'}>
+      <div>Mis juegos</div>
+    </div>: 
+    <div className="titulo" id={nombreCategoria}>
+        <div>{nombreCategoria}</div>
+    </div>}
+    
+    <Carousel 
+    responsive={responsive} 
+    infinite={true}
+    rtl={false}
+    slidesToSlide={slidesToSlide}
+    autoPlay={true}
+    autoPlaySpeed={autoPlaySpeed}
+    >
         {subResultados.map((subResultado, index) => (
           <Card key={index} juegos={subResultado} />
         ))}

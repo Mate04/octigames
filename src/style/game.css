@@ -1,13 +1,15 @@
-.container{
+.container-games{
     display: flex;
     width: 100%;
+    height: 100%;
     gap: 50px;
+    margin: 30px 0;
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
 }
 .cuadrado {
     margin: 5px 0px;
-    height: 650px;
+    height: 750px;
     width: 60%;
   }
   
@@ -23,7 +25,7 @@
 }
 
 .add-left{
-    height: 80%;
+  height: 80%;
 }
 .home{
 display: flex;
@@ -39,9 +41,29 @@ display: flex;
   object-fit: cover; 
 }
 .link-qsy{
-    display: flex;
+  display: flex;
   justify-content: center; /* Centra horizontalmente */
   align-items: center;
   position: relative;
   flex-direction: column;
+}
+
+
+.link-qsy svg path {
+  fill: white;
+  transition: fill 0.2s ease; /* Agregamos una transición suave de 0.3 segundos */
+}
+
+
+.button-home{
+  display: flex;
+  width: 30% !important;
+  padding: 4px;
+  background-color: #004d93;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+.button-home:hover{
+  background-color: #012850;
 }

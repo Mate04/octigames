@@ -1,11 +1,22 @@
 import '../style/navbar.css'
-
+import Link from 'next/link';
 export default function NavBar(){
-
+    const categorias = [null,'Shooter', 'Casual', 'Puzzle', 'Dress-up', 'Adventure'];
+    const scrollToCategory = (categoria) => {
+      const element = document.getElementById(categoria);
+      if (element) {
+          window.scrollTo({
+              behavior: "smooth",
+              top: element.offsetTop
+          });
+      }
+  };
     return <>
     <nav className="navbar">
   <div className="containerr">
-    
+    <div className="titulo tituloOcti">
+      <Link href='/' className='tituloOcti-link'>octiGames</Link>
+    </div>
     <ul>
       
       <li className="search">
@@ -17,13 +28,17 @@ export default function NavBar(){
           </div>
         </div>
       </li>
-      <li><a href="#">categoria</a></li>
-      <li><a href="#">categoria</a></li>
-      <li><a href="#">categoria</a></li>
-      <li><a href="#">categoria</a></li>
-      <li><a href="#">categoria</a></li>
+
+      {/* Mapeamos las categorías y mostramos solo aquellas que no son null */}
+      {categorias.map((categoria, index) => {
+              if (categoria !== null) {
+                return <li key={index}><a href={`#${categoria}`}  >{categoria}</a></li>;
+              } else {
+                return null; // Si la categoría es null, no mostramos nada
+              }
+            })}
     </ul>
   </div>
 </nav>
-    </>
+</>
 }

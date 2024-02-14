@@ -2,8 +2,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column
 }
 .frame {
     height: 100%;
     width: 80%;
+}
+.info {
+    color: white
+}
+.info h1 {
+    font-size: 45px;
+    font: bold
+}
+.info p {
+    font-size: 24px;
 }
