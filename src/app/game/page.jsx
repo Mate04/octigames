@@ -6,7 +6,7 @@ import '../../style/gampley.css'
 import Image from 'next/image'
 import Link from 'next/link'
 import Banner from '@/components/banner'
-export default function page() {
+export default function Page() {
   const query = useSearchParams()
   const info = {
     Md5 : query.get('Md5'),
