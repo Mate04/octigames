@@ -5,7 +5,24 @@ import 'react-multi-carousel/lib/styles.css';
 import Card from './card'
 import { useState,useEffect } from 'react';
 export default function Categoria({nombreCategoria = null, resultados}) {
-  
+  const [rtl, setRtl] = useState(false);
+  const [autoPlaySpeed, setAutoPlaySpeed] = useState(3000);
+  const [slidesToSlide, setSlidesToSlide] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const randomRtl = Math.random() < 0.5;
+      setRtl(randomRtl);
+
+      const randomSpeed = Math.floor(Math.random() * (5000 - 3000 + 1)) + 3000; // Entre 3000 y 5000
+      setAutoPlaySpeed(randomSpeed);
+
+      const randomSlidesToSlide = Math.floor(Math.random() * (3 - 1 + 1)) + 1; // Entre 1 y 3
+      setSlidesToSlide(randomSlidesToSlide);
+    }, autoPlaySpeed-0.2);
+
+    return () => clearInterval(interval);
+  }, [autoPlaySpeed]);
   
 
   if (!resultados){
@@ -57,29 +74,12 @@ export default function Categoria({nombreCategoria = null, resultados}) {
               items: 1
             }
           };
-          const [rtl, setRtl] = useState(false);
-          const [autoPlaySpeed, setAutoPlaySpeed] = useState(3000);
-          const [slidesToSlide, setSlidesToSlide] = useState(1);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const randomRtl = Math.random() < 0.5;
-      setRtl(randomRtl);
-
-      const randomSpeed = Math.floor(Math.random() * (5000 - 3000 + 1)) + 3000; // Entre 3000 y 5000
-      setAutoPlaySpeed(randomSpeed);
-
-      const randomSlidesToSlide = Math.floor(Math.random() * (3 - 1 + 1)) + 1; // Entre 1 y 3
-      setSlidesToSlide(randomSlidesToSlide);
-    }, autoPlaySpeed-0.2);
-
-    return () => clearInterval(interval);
-  }, [autoPlaySpeed]);
+          
               
   return (
     <>
     {nombreCategoria === null ? 
-     <div className="titulo" id={'mis-juegos'}>
+    <div className="titulo" id={'mis-juegos'}>
       <div>Mis juegos</div>
     </div>: 
     <div className="titulo" id={nombreCategoria}>
