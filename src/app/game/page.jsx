@@ -1,4 +1,13 @@
 "use client"
+
+function page() {
+  return (
+    <div>page</div>
+  )
+}
+
+export default page
+/*
 import { useSearchParams } from 'next/navigation'
 import logo from '../../../public/WhatsApp Image 2024-02-04 at 16.11.28_e551de90.jpg'//public\WhatsApp Image 2024-02-04 at 16.11.28_e551de90.jpg'//'../../../public/WhatsApp Image 2024-02-04 at 16.11.28_e551de90.jpg'//public\WhatsApp Image 2024-02-04 at 16.11.28_e551de90.jpg
 import '../../style/game.css'
@@ -55,3 +64,4 @@ export default function Page() {
     </>
   )
 }
+*/
