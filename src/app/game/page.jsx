@@ -7,14 +7,18 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Banner from '@/components/banner'
 export default function Page() {
+  let info = {};
   const query = useSearchParams()
-  const info = {
-    Md5 : query.get('Md5'),
-    Title : query.get('Title'),
-    Description : query.get('Description'),
-    Height : query.get('Height'),
-    Width : query.get('Width'),
+  if (typeof window !== 'undefined') {
+    info = {
+      Md5 : query.get('Md5'),
+      Title : query.get('Title'),
+      Description : query.get('Description'),
+      Height : query.get('Height'),
+      Width : query.get('Width'),
+    }
   }
+
 
 
 
