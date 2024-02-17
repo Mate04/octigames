@@ -1,5 +1,4 @@
 import '../style/style.css'
-import subway from '../../public/589a3be05aa6293a4aac489d.png'//public\589a3be05aa6293a4aac489d.png
 import Link from 'next/link'
 
 function Card({ juegos }) {
