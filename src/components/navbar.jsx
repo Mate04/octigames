@@ -2,15 +2,6 @@ import '../style/navbar.css'
 import Link from 'next/link';
 export default function NavBar(){
     const categorias = [null,'Shooter', 'Casual', 'Puzzle', 'Dress-up', 'Adventure'];
-    const scrollToCategory = (categoria) => {
-      const element = document.getElementById(categoria);
-      if (element) {
-          window.scrollTo({
-              behavior: "smooth",
-              top: element.offsetTop
-          });
-      }
-  };
     return <>
     <nav className="navbar">
   <div className="containerr">
