@@ -1,13 +1,4 @@
 "use client"
-
-function page() {
-  return (
-    <div>page</div>
-  )
-}
-
-export default page
-/*
 import { useSearchParams } from 'next/navigation'
 import logo from '../../../public/WhatsApp Image 2024-02-04 at 16.11.28_e551de90.jpg'//public\WhatsApp Image 2024-02-04 at 16.11.28_e551de90.jpg'//'../../../public/WhatsApp Image 2024-02-04 at 16.11.28_e551de90.jpg'//public\WhatsApp Image 2024-02-04 at 16.11.28_e551de90.jpg
 import '../../style/game.css'
@@ -15,6 +6,15 @@ import '../../style/gampley.css'
 import Image from 'next/image'
 import Link from 'next/link'
 import Banner from '@/components/banner'
+function Page() {
+  return (
+    <div>page</div>
+  )
+}
+
+export default page
+/*
+
 export default function Page() {
   let info = {};
   const query = useSearchParams()
