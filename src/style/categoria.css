@@ -1,0 +1,24 @@
+.Container-Categoria {
+    padding: 10px 35px;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(9, 1fr);
+  }
+  
+  .key-Children {
+    height: 100%;
+    width: 100%;
+    
+  }
+  
+  .Imagen-key {
+    width: 100%;
+    height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  transition: height 0.3s ease-in-out;
+  }
+
+  .Imagen-key:hover {
+    height: 110%;
+  }

@@ -23,7 +23,7 @@ export default function NavBar(){
       {/* Mapeamos las categorías y mostramos solo aquellas que no son null */}
       {categorias.map((categoria, index) => {
               if (categoria !== null) {
-                return <li key={index}><a href={`#${categoria}`}  >{categoria}</a></li>;
+                return <li key={index}><Link href={`/${categoria}`}  >{categoria}</Link></li>;
               } else {
                 return null; // Si la categoría es null, no mostramos nada
               }

@@ -49,7 +49,7 @@ export default function Categoria({nombreCategoria = null, resultados}) {
       return chunks;
     };
     const subResultados = chunkArray(resultadosFiltrados, 4);
-    console.log(subResultados);
+
   
     const responsive = {
         superLargeDesktop: {
