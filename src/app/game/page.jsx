@@ -8,15 +8,13 @@ import '../../style/gampley.css'
 import Banner from '@/components/banner'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useSearchParams } from 'next/navigation'
+
 function  Page() {
-  const { Md5, Title, Description,url} = obtenerUrlYQuery()
-  let contador = localStorage.getItem('contador');
-  if (contador == null) {
-    contador = 1
-    localStorage.setItem('contador',contador)
-    setTimeout(()=>location.reload(),300);
-    return
-  }else{
+  const url = useSearchParams()
+  const Md5 = url.get('Md5')
+  const Title = url.get('Title')
+  const Description = url.get('Description')
     return (
       <>
       <div className='container-games'>
@@ -36,7 +34,7 @@ function  Page() {
           </div>
         </div>
         <div id="rectangulo2" className="cuadrado contenidoJuego">{}
-          <iframe src={`https://html5.gamedistribution.com/${Md5}/?gd_sdk_referrer_url=https:${url}`} width="800" height="600" scrolling="none" frameborder="0"></iframe>
+          <iframe src={`https://html5.gamedistribution.com/${Md5}/?gd_sdk_referrer_url=https:localhost3000`} width="800" height="600" scrolling="none" frameborder="0"></iframe>
           <div className='info'>
             <h1>{Title}</h1>
             <p>{Description}</p>
@@ -48,40 +46,8 @@ function  Page() {
       </div>
       </>
     )
-  }
-}
-
-function obtenerUrlYQuery() {
-  const url = window.location.href;
-  const parametros = new URLSearchParams(window.location.search);
   
-  let objeto = {};
-
-  for (let [clave, valor] of parametros) {
-    objeto[clave] = valor
-  }
-  objeto['url']= url
-  return objeto
 }
+
+
 export default Page
-/*
-
-export default function Page() {
-  let info = {};
-  const query = useSearchParams()
-  if (typeof window !== 'undefined') {
-    info = {
-      Md5 : query.get('Md5'),
-      Title : query.get('Title'),
-      Description : query.get('Description'),
-      Height : query.get('Height'),
-      Width : query.get('Width'),
-    }
-  }
-
-
-
-
-  
-}
-*/

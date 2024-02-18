@@ -4,10 +4,6 @@ import { getApi } from "@/api/getSide";
 import React, { useState, useEffect } from "react";
 
 export default function Home() {
-    let contador = localStorage.getItem('contador')
-    if (contador == 1){
-        localStorage.removeItem('contador')
-    }
     const categorias = [null,'Shooter', 'Casual', 'Puzzle', 'Dress-up', 'Adventure'];
     const [resultados, setResultados] = useState([]);
 
