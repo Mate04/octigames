@@ -1,16 +1,23 @@
 "use client"
+import { Suspense } from 'react';
 //public\WhatsApp Image 2024-02-04 at 16.11.28_e551de90.jpg'//'../../../public/WhatsApp Image 2024-02-04 at 16.11.28_e551de90.jpg'//public\WhatsApp Image 2024-02-04 at 16.11.28_e551de90.jpg
 import '../../style/game.css'
 import '../../style/navbar.css'
-
+import Image from 'next/image';
 import logo from '../../../public/WhatsApp Image 2024-02-04 at 16.11.28_e551de90.jpg'
 import '../../style/gampley.css'
 import Banner from '@/components/banner'
 import Link from 'next/link'
-import Image from 'next/image'
 import { useSearchParams } from 'next/navigation'
 
-function  Page() {
+function Page() {
+      return (
+        <Suspense fallback={<div>Loading...</div>}>
+        <GameComponent />
+        </Suspense>
+      )
+}
+function GameComponent(){
   const url = useSearchParams()
   const Md5 = url.get('Md5')
   const Title = url.get('Title')
@@ -46,8 +53,6 @@ function  Page() {
       </div>
       </>
     )
-  
 }
-
 
 export default Page
