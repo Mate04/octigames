@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Modak&display=swap');
 
 body {
   background: #014582;
   margin: 0;
+}
+.modak-regular {
+  font-family: "Modak", system-ui;
+  font-style: normal;
 }

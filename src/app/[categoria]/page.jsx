@@ -33,7 +33,10 @@ export default function Page() {
     });
   
   return (
-    <>
+    <div className='containeerr'>
+      <div className='TituloCategoria modak-regular'>
+        {categoria}
+      </div>
       <div className='Container-Categoria'>{ 
         resultadosFiltrados.map((data, index)=>(
           <div key={index} className='key-Children'>
@@ -43,7 +46,7 @@ export default function Page() {
           </div>
         ))
         }</div>
-    </>
+    </div>
     )
   }
  

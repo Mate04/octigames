@@ -9,7 +9,7 @@ export default function NavBar(){
     <nav className="navbar">
   <div className="containerr">
     <div className="titulo tituloOcti">
-      <Link href='/' className='tituloOcti-link'>octiGames</Link>
+      <Link href='/' className='tituloOcti-link modak-regular'>octiGames</Link>
     </div>
     <ul>
       

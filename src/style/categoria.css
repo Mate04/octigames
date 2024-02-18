@@ -22,3 +22,13 @@
   .Imagen-key:hover {
     height: 110%;
   }
+
+  .containeerr{
+    display: flex;
+    flex-direction: column;
+  }
+  .TituloCategoria{
+    font-size: 50px;
+    color: white;
+    padding: 20px 0 0 40px;
+  }
