@@ -58,8 +58,16 @@ export default function Categoria({nombreCategoria = null, resultados}) {
               items: 5
             },
             desktop: {
-              breakpoint: { max: 3000, min: 1300 },
+              breakpoint: { max: 3000, min: 1700 },
               items: 6
+            },
+            tablets: {
+              breakpoint: { max: 1700, min: 1400 },
+              items: 5
+            },
+            tabletss: {
+              breakpoint: { max: 1400, min: 1300 },
+              items: 4
             },
             tablet: {
               breakpoint: { max: 1300, min: 700 },

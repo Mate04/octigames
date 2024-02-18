@@ -119,7 +119,7 @@
 /*dropdown*/
 
 .dropdown{
-  min-width: 15em;
+  min-width: 10em;
 }
 .dropdown * {
   box-sizing: border-box;
@@ -131,8 +131,8 @@
   justify-content: space-between;
   align-items: center;
   border: 2px #2a2f3b solid;
-  border-radius: 0.5em;
-  padding: 1em;
+  border-radius: 50px;
+  padding: 10px 20px;
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -170,7 +170,6 @@
   z-index: 1;
 }
 .menu li{
-  padding: 0.7em 0.5em;
   margin: 0.3em 0;
   border-radius: 0.5em;
   cursor: pointer;
