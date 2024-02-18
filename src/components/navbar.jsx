@@ -1,5 +1,8 @@
+
 import '../style/navbar.css'
 import Link from 'next/link';
+import Dropdown from './dropdown';
+
 export default function NavBar(){
     const categorias = [null,'Shooter', 'Casual', 'Puzzle', 'Dress-up', 'Adventure'];
     return <>
@@ -19,17 +22,11 @@ export default function NavBar(){
           </div>
         </div>
       </li>
-
-      {/* Mapeamos las categorías y mostramos solo aquellas que no son null */}
-      {categorias.map((categoria, index) => {
-              if (categoria !== null) {
-                return <li key={index}><Link href={`/${categoria}`}  >{categoria}</Link></li>;
-              } else {
-                return null; // Si la categoría es null, no mostramos nada
-              }
-            })}
+      
+      <Dropdown options={categorias} defaultOption={null} />
     </ul>
   </div>
 </nav>
 </>
 }
+
