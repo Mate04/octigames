@@ -2,7 +2,7 @@
 import '../../style/categoria.css'
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation'
-import { getApi } from '@/api/getSide';
+import { getApi } from '../../api/getSide';
 import Link from 'next/link';
 
 export default function Page() {

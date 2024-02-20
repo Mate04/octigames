@@ -3,28 +3,8 @@ import '../style/carousel.css'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Card from './card'
-import { useState,useEffect } from 'react';
 export default function Categoria({nombreCategoria = null, resultados}) {
-  const [rtl, setRtl] = useState(false);
-  const [autoPlaySpeed, setAutoPlaySpeed] = useState(3000);
-  const [slidesToSlide, setSlidesToSlide] = useState(1);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const randomRtl = Math.random() < 0.5;
-      setRtl(randomRtl);
-
-      const randomSpeed = Math.floor(Math.random() * (5000 - 3000 + 1)) + 3000; // Entre 3000 y 5000
-      setAutoPlaySpeed(randomSpeed);
-
-      const randomSlidesToSlide = Math.floor(Math.random() * (3 - 1 + 1)) + 1; // Entre 1 y 3
-      setSlidesToSlide(randomSlidesToSlide);
-    }, autoPlaySpeed-0.2);
-
-    return () => clearInterval(interval);
-  }, [autoPlaySpeed]);
   
-
   if (!resultados){
     <div>cargando</div>
   }
@@ -88,11 +68,9 @@ export default function Categoria({nombreCategoria = null, resultados}) {
     
     <Carousel 
     responsive={responsive} 
-    infinite={true}
+    infinite={false}
     rtl={false}
-    slidesToSlide={slidesToSlide}
-    autoPlay={true}
-    autoPlaySpeed={autoPlaySpeed}
+    autoPlay={false}
     >
         {subResultados.map((subResultado, index) => (
           <Card key={index} juegos={subResultado} />

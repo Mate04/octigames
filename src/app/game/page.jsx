@@ -2,14 +2,13 @@
 import { Suspense } from 'react';
 //public\WhatsApp Image 2024-02-04 at 16.11.28_e551de90.jpg'//'../../../public/WhatsApp Image 2024-02-04 at 16.11.28_e551de90.jpg'//public\WhatsApp Image 2024-02-04 at 16.11.28_e551de90.jpg
 import '../../style/game.css'
-import '../../style/navbar.css'
 import Image from 'next/image';
 import logo from '../../../public/WhatsApp Image 2024-02-04 at 16.11.28_e551de90.jpg'
 import '../../style/gampley.css'
 import Banner from '@/components/banner'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
-
+import Popunder from '@/components/popunder';
 function Page() {
       return (
         <Suspense fallback={<div>Loading...</div>}>
@@ -24,6 +23,7 @@ function GameComponent(){
   const Description = url.get('Description')
     return (
       <>
+      <Popunder boolean={false}/>
       <div className='container-games'>
         <div className="cuadrado rectangulo1">
           <div className='home'>
@@ -37,7 +37,7 @@ function GameComponent(){
           </Link>
           </div>
           <div className='add-left'>
-            <Banner height={300} width={160}/>
+            <Banner keyAD={'9ce498e6cb4051785844ebe6be552e04'} height={300} width={160}/>
           </div>
         </div>
         <div id="rectangulo2" className="cuadrado contenidoJuego">{}
@@ -48,7 +48,7 @@ function GameComponent(){
           </div>
         </div>
         <div id="rectangulo3" className="cuadrado rectangulo3">
-        <Banner height={600} width={160}/>
+          <Banner keyAD={'c3e602f43853a2460ed95f5522d1078e'} height={600} width={160}/>
         </div>
       </div>
       </>
