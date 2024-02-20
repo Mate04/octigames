@@ -1,13 +1,8 @@
-import Popunder from "@/components/popunder"
+import Share from '@/components/share'
 
-function Page() {
-    
-  return (
-    <>
-      <Popunder/>
-      <div>hola</div>
-    </>
-  )
+
+export default function MyComponent() {
+  return <>
+  <Share/>
+  </>
 }
-
-export default Page

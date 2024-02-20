@@ -9,6 +9,7 @@ import Banner from '@/components/banner'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import Popunder from '@/components/popunder';
+import Share from '@/components/share';
 function Page() {
       return (
         <Suspense fallback={<div>Loading...</div>}>
@@ -43,6 +44,7 @@ function GameComponent(){
         <div id="rectangulo2" className="cuadrado contenidoJuego">{}
           <iframe src={`https://html5.gamedistribution.com/${Md5}/?gd_sdk_referrer_url=https:https://octigames.vercel.app/`} width="800" height="600" scrolling="none" frameborder="0"></iframe>
           <div className='info'>
+            <Share/>
             <h1>{Title}</h1>
             <p>{Description}</p>
           </div>
