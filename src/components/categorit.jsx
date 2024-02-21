@@ -1,15 +1,12 @@
-"use client"
 import '../style/carousel.css'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Card from './card'
-export default function Categoria({nombreCategoria = null, resultados}) {
-  
-  if (!resultados){
-    <div>cargando</div>
-  }
-  else{
-    const resultadosFiltrados = resultados.map(resultado => {
+import { getApi } from '@/api/getSide';
+import CustomArrow from './carousel/buttonArrow';
+export default async function Categoria({nombreCategoria = null, }) {
+  const resultados  = await getApi(100,nombreCategoria);
+  const resultadosFiltrados = resultados.map(resultado => {
       return {
         Title: resultado.Title,
         Description: resultado.Description,
@@ -20,50 +17,50 @@ export default function Categoria({nombreCategoria = null, resultados}) {
         CategoryList: resultado.Category,
         Tags: resultado.Tag
       };
-    });
-    const chunkArray = (array, chunkSize) => {
-      const chunks = [];
-      for (let i = 0; i < array.length; i += chunkSize) {
-        chunks.push(array.slice(i, i + chunkSize));
-      }
-      return chunks;
-    };
-    const subResultados = chunkArray(resultadosFiltrados, 4);
-
+  });
+  const chunkArray = (array, chunkSize) => {
+    const chunks = [];
+    for (let i = 0; i < array.length; i += chunkSize) {
+      chunks.push(array.slice(i, i + chunkSize));
+    }
+    return chunks;
+  };
+  const subResultados = chunkArray(resultadosFiltrados, 4);
   
-    const responsive = {
-        superLargeDesktop: {
-              // the naming can be any, depends on you.
-              breakpoint: { max: 4000, min: 3000 },
-              items: 5
-            },
-            desktop: {
-              breakpoint: { max: 3000, min: 1700 },
-              items: 6
-            },
-            tablets: {
-              breakpoint: { max: 1700, min: 1400 },
-              items: 5
-            },
-            tabletss: {
-              breakpoint: { max: 1400, min: 1300 },
-              items: 4
-            },
-            tablet: {
-              breakpoint: { max: 1300, min: 700 },
-              items: 3
-            },
-            mobile: {
-              breakpoint: { max: 700, min: 480 },
-              items: 2
-            },
-            mobiles: {
-              breakpoint: { max: 480, min: 0 },
-              items: 1
-            }
-          };
-          
-              
+  
+  const responsive = {
+      superLargeDesktop: {
+            // the naming can be any, depends on you.
+            breakpoint: { max: 4000, min: 3000 },
+            items: 5
+          },
+          desktop: {
+            breakpoint: { max: 3000, min: 1700 },
+            items: 6
+          },
+          tablets: {
+            breakpoint: { max: 1700, min: 1400 },
+            items: 5
+          },
+          tabletss: {
+            breakpoint: { max: 1400, min: 1300 },
+            items: 4
+          },
+          tablet: {
+            breakpoint: { max: 1300, min: 700 },
+            items: 3
+          },
+          mobile: {
+            breakpoint: { max: 700, min: 480 },
+            items: 2
+          },
+          mobiles: {
+            breakpoint: { max: 480, min: 0 },
+            items: 1
+          }
+        };
+        
+  if (resultados){
   return (
     <>
     {nombreCategoria === null ? 
@@ -76,9 +73,10 @@ export default function Categoria({nombreCategoria = null, resultados}) {
     
     <Carousel 
     responsive={responsive} 
-    infinite={false}
+    infinite={true}
     rtl={false}
     autoPlay={false}
+    ssr={true}
     >
         {subResultados.map((subResultado, index) => (
           <Card key={index} juegos={subResultado} />
@@ -86,4 +84,6 @@ export default function Categoria({nombreCategoria = null, resultados}) {
     </Carousel>
       </>
   )
-}}
+  }
+}
+
