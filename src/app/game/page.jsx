@@ -10,6 +10,7 @@ import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import Popunder from '@/components/popunder';
 import Share from '@/components/share';
+import Categoria from '@/components/categorit';
 function Page() {
       return (
         <Suspense fallback={<div>Loading...</div>}>
@@ -53,6 +54,7 @@ function GameComponent(){
           <Banner keyAD={'c3e602f43853a2460ed95f5522d1078e'} height={600} width={160}/>
         </div>
       </div>
+      <Categoria/>
       </>
     )
 }
