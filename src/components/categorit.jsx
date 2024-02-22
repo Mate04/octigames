@@ -5,7 +5,7 @@ import Card from './card'
 import { getApi } from '@/api/getSide';
 import CustomArrow from './carousel/buttonArrow';
 export default async function Categoria({nombreCategoria = null, }) {
-  const resultados  = await getApi(100,nombreCategoria);
+  const resultados  = await getApi(40,nombreCategoria);
   setTimeout(()=>{},2000)
   const resultadosFiltrados = resultados.map(resultado => {
       return {
