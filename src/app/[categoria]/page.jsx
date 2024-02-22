@@ -9,15 +9,30 @@ export default function Page() {
   const resultado = useParams();
   const categoria = resultado['categoria'];
   const [dataGame, setData] = useState(null);
-
-  useEffect(() => {
+  const [count, setCount] = useState(1);
+  const [hasMoreResults, setHasMoreResults] = useState(true);
+  
+  useEffect(()=>{
     const fetchData = async () => {
-      const response = await getApi('all', categoria);
+      const response = await getApi(100, categoria,1);
       setData(response);
     };
-
     fetchData();
-  }, [categoria]);
+  },[categoria])
+  const load = async () =>{
+    await setCount(count+1)
+    const response = await getApi(100, categoria,count);
+    if (response.length === 0) {
+      
+      setHasMoreResults(false);
+    } else {
+      setData(prevData => {
+        const newData = [...prevData, ...response];
+        return newData;
+      });
+    }
+
+  };
   if ( dataGame) {
     const resultadosFiltrados = dataGame.map(resultado => {
     return {
@@ -31,7 +46,6 @@ export default function Page() {
       Tags: resultado.Tag
     };
     });
-  
   return (
     <div className='containeerr'>
       <div className='TituloCategoria modak-regular'>
@@ -39,17 +53,27 @@ export default function Page() {
       </div>
       <div className='Container-Categoria'>{ 
         resultadosFiltrados.map((data, index)=>(
-          <div key={index} className='key-Children'>
-            <Link href={`/game?Md5=${data.Md5}&Title=${data.Title}&Description=${data.Description}&Height=${data.Height}&Width=${data.Width}`}>
+          <div key={index} >
+            <Link className='key-Children' href={`/game?Md5=${data.Md5}&Title=${data.Title}&Description=${data.Description}&Height=${data.Height}&Width=${data.Width}`}>
               <img src={data.ThirdAssetElement} alt={data.Title} className='Imagen-key'/>
+            <p>
+              {data.Title}
+            </p>
             </Link>
           </div>
         ))
         }</div>
+        <div className='button-ver-mas' onClick={()=>{load()}}>
+        {hasMoreResults ? (
+        <div className='button-ver-mas' onClick={load}><button>Ver mas</button></div>
+      ) : (
+        <p>Ya no hay más resultados.</p>
+      )}
+
+        </div>
     </div>
     )
   }
- 
 else {
   return (<div>
     cargando...

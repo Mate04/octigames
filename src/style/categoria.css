@@ -1,26 +1,44 @@
 .Container-Categoria {
     padding: 10px 35px;
     display: grid;
-    grid-gap: 15px;
-    grid-template-columns: repeat(9, 1fr);
+    grid-gap: 30px;
+    grid-template-columns: repeat(10, 1fr);
   }
-  
+  a {
+    text-decoration: none;
+    color: inherit;
+
+  }
   .key-Children {
-    height: 100%;
+    height: 90%;
     width: 100%;
-    
+    background-color: #003a6d;
+    display: flex;
+    align-items: center;
+    gap: 0; 
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    z-index: 3;
   }
-  
+  .key-Children:hover {
+    background-color: #01335f;
+    font-size: 1.5em;
+    width: 105%;
+    z-index: 99;
+  }
   .Imagen-key {
-    width: 100%;
-    height: 100%;
+  width: 100%;
   object-fit: contain;
   border-radius: 10px;
-  transition: height 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
   }
-
   .Imagen-key:hover {
-    height: 110%;
+    width: 110%;
   }
 
   .containeerr{
@@ -31,4 +49,68 @@
     font-size: 50px;
     color: white;
     padding: 20px 0 0 40px;
+  }
+  .button-ver-mas {
+    align-self: flex-end;
+    margin: 5px 40px;
+    
+  }
+  .button-ver-mas button {
+    
+    border: none; /* Elimina el borde */
+    outline: none; /* Elimina el contorno que aparece al hacer clic */
+    text-decoration: none; /* Elimina la decoración del texto */
+    background: none; /* Elimina el fondo */
+    font-size: 1.5em; /* Hace la letra más grande */
+    color: initial; /* Color inicial de la letra */
+    transition: font-size 0.3s ease, color 0.3s ease; 
+    border-radius: 10px;
+    color: white;
+  }
+  .button-ver-mas button:hover {
+    font-size: 2em; /* Hace la letra aún más grande al pasar el cursor */
+     /* Cambia el color de la letra a blanco al pasar el cursor */
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .button-ver-mas p {
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+  }
+  @media (max-width: 1700px) {
+    .Container-Categoria {
+      grid-template-columns: repeat(8, 1fr);
+    }
+  }
+  @media (max-width: 1300px) {
+    .Container-Categoria {
+      grid-template-columns: repeat(7, 1fr);
+    }
+  }
+  @media (max-width: 1200px) {
+    .Container-Categoria {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+  
+  /* Cuando la pantalla tenga menos de 900px de ancho, se mostrarán 6 columnas */
+  @media (max-width: 1000px) {
+    .Container-Categoria {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  /* Cuando la pantalla tenga menos de 600px de ancho, se mostrarán 4 columnas */
+  @media (max-width: 700px) {
+    .Container-Categoria {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Cuando la pantalla tenga menos de 400px de ancho, se mostrarán 2 columnas */
+  @media (max-width: 400px) {
+    .Container-Categoria {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }

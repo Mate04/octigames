@@ -1,5 +1,5 @@
 import axios from 'axios';
-export async function getApi(amount='all',categories='all',tags='all',page=1){
+export async function getApi(amount='all',categories='all',page=1,tags='all',){
     const apiUrl = 'https://catalog.api.gamedistribution.com/api/v2.0/rss/All/';
     if (categories === null){categories = 'all'}
     try {
@@ -10,7 +10,7 @@ export async function getApi(amount='all',categories='all',tags='all',page=1){
             format:'json',
             rewarded:'0',
             type:'html5',
-            page:page
+            page:page.toString()
         };
         const response = await axios.get(apiUrl,{params:queryParams});
         
