@@ -1,0 +1,18 @@
+.ver-mas{
+    display: block; /* Alinea el elemento a la derecha */
+}
+.ver-mas-link {
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    display: block; /* Permite alinear el texto a la derecha */
+    text-align: right;
+    margin-right: 50px; /* Alinea el texto a la derecha */ /* Quita la decoración del enlace */
+    transition: all 0.1s ease-in-out;
+}
+.ver-mas-link:hover{
+    font-size: 20px; /* Aumenta el tamaño de la letra */
+    text-decoration: underline; /* Añade una línea debajo */
+
+}

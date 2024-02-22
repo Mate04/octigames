@@ -1,4 +1,4 @@
-
+"use client"
 import '../style/style.css'
 import Link from 'next/link'
 function Card({ juegos }) {

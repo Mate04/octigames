@@ -4,9 +4,9 @@ import 'react-multi-carousel/lib/styles.css';
 import Card from './card'
 import { getApi } from '@/api/getSide';
 import CustomArrow from './carousel/buttonArrow';
+import VerMas from './carousel/verMas';
 export default async function Categoria({nombreCategoria = null, }) {
   const resultados  = await getApi(40,nombreCategoria);
-  setTimeout(()=>{},2000)
   const resultadosFiltrados = resultados.map(resultado => {
       return {
         Title: resultado.Title,
@@ -83,6 +83,7 @@ export default async function Categoria({nombreCategoria = null, }) {
           <Card key={index} juegos={subResultado} />
         ))}
     </Carousel>
+    <VerMas nombreCategorias={nombreCategoria}/>
       </>
   )
   }
