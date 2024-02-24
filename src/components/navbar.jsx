@@ -3,7 +3,7 @@ import '../style/navbar.css'
 import Link from 'next/link';
 import Dropdown from './dropdown';
 import Image from 'next/image';
-import logo from '../../public/logo.png'
+import logo from '../../public/logo.png'  
 export default function NavBar(){
     const categorias = [null,'Shooter', 'Casual', 'Puzzle', 'Dress-up', 'Adventure'];
     return <>

@@ -19,6 +19,7 @@ export default function Page() {
     };
     fetchData();
   },[categoria])
+  
   const load = async () =>{
     await setCount(count+1)
     const response = await getApi(100, categoria,count);
@@ -33,6 +34,16 @@ export default function Page() {
     }
 
   };
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || !hasMoreResults) return;
+      load();
+    }
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [hasMoreResults, load]);
+
   if ( dataGame) {
     const resultadosFiltrados = dataGame.map(resultado => {
     return {
@@ -63,14 +74,6 @@ export default function Page() {
           </div>
         ))
         }</div>
-        <div className='button-ver-mas' onClick={()=>{load()}}>
-        {hasMoreResults ? (
-        <div className='button-ver-mas' onClick={load}><button>Ver mas</button></div>
-      ) : (
-        <p>Ya no hay más resultados.</p>
-      )}
-
-        </div>
     </div>
     )
   }

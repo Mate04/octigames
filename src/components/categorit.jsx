@@ -3,7 +3,6 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Card from './card'
 import { getApi } from '@/api/getSide';
-import CustomArrow from './carousel/buttonArrow';
 import VerMas from './carousel/verMas';
 export default async function Categoria({nombreCategoria = null, }) {
   const resultados  = await getApi(40,nombreCategoria);
