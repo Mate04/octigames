@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation'
 import { getApi } from '../../api/getSide';
 import Link from 'next/link';
-
+import Spinner from '@/components/spinner';
 export default function Page() {
   const resultado = useParams();
   const categoria = resultado['categoria'];
@@ -78,7 +78,5 @@ export default function Page() {
     )
   }
 else {
-  return (<div>
-    cargando...
-  </div>)
+  return (<Spinner/>)
 }}
