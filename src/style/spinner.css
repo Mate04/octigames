@@ -1,0 +1,7 @@
+.spi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 100% of viewport height */
+    width: 100%; /* 100% of viewport width */
+}
