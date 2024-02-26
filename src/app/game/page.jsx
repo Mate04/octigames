@@ -11,10 +11,9 @@ import { useSearchParams } from 'next/navigation'
 import Popunder from '@/components/popunder';
 import Share from '@/components/share';
 import Categoria from '@/components/categorit';
-import Spinner from '@/components/spinner';
 function Page() {
       return (
-        <Suspense fallback={<Spinner/>}>
+        <Suspense fallback={<div>hola</div>}>
         <GameComponent />
         </Suspense>
       )

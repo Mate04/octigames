@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation'
 import { getApi } from '../../api/getSide';
 import Link from 'next/link';
-import Spinner from '@/components/spinner';
 
 
 export default function Page() {
@@ -34,13 +33,9 @@ export default function Page() {
         return newData;
       });
     }
-
-  if (typeof window !== 'undefined') {
-  // Tu código específico del navegador aquí...
-
+  }
 
   
-  };
   
   useEffect(() => {
     const handleScroll = () => {
@@ -85,5 +80,5 @@ export default function Page() {
     )
   }
 else {
-  return (<Spinner/>)
-}}}
+  return (<div>hola</div>)
+}}
