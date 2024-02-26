@@ -1,7 +1,7 @@
 "use client"
 import { ring } from 'ldrs'
 import "../style/spinner.css"
-// Default values shown
+
 
 export default function Spinner() {
     ring.register()
