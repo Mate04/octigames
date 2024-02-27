@@ -59,3 +59,13 @@
   font-weight: bold;
   color: #fff;
 }
+
+.Dropdown-control  {
+  border-radius: 10px;
+}
+.Dropdown-menu{
+  border-radius: 10px;
+}
+li.drop{
+  align-self: baseline;
+}

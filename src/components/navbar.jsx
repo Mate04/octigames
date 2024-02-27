@@ -1,11 +1,12 @@
 'use client'
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 import '../style/navbar.css'
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../../public/logo.png'
 import SVG from './svg/component';
-import Dropdown from 'react-dropdown';
-import 'react-dropdown/style.css';
+
 export default function NavBar(){
     const options = ['Shooter', 'Casual', 'Puzzle', 'Dress-up', 'Adventure','Battle','Art','Agility'];
 
@@ -59,7 +60,7 @@ export default function NavBar(){
           <SVG key={categoria} name={categorias[categoria].name} svg={categorias[categoria].svg} width={33}/>
         ))}
         </li>
-        <li>
+        <li className='drop'>
           <Dropdown options={options} onChange={this} value={options[0]} placeholder="Select an option" />;
         </li>
         
