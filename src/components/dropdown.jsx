@@ -1,9 +1,10 @@
 "use client"
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-export default function Dropdown({ options, defaultOption }) {
+import '../style/dropdown.css'
+export default function Dropdown({ options, defaultOption =null }) {
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedOption, setSelectedOption] = useState('Mis juegos');
+    const [selectedOption, setSelectedOption] = useState( 'Mis juegos');
   
     const toggleOpen = () => setIsOpen(!isOpen);
   
