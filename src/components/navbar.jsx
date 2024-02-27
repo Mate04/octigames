@@ -4,8 +4,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../../public/logo.png'
 import SVG from './svg/component';
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 export default function NavBar(){
-    const categoriass = [null,'Shooter', 'Casual', 'Puzzle', 'Dress-up', 'Adventure','Battle','Art','Agility'];
+    const options = ['Shooter', 'Casual', 'Puzzle', 'Dress-up', 'Adventure','Battle','Art','Agility'];
 
     const categorias = {
       shooter : {
@@ -14,7 +16,31 @@ export default function NavBar(){
       },
       casual : {
         name: 'casual',
-        svg : 'M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941'
+        svg : 'M2.25 18 9 11.25l4.306 4.306a11.95 16.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941'
+      },
+      Puzzle : {
+        name: 'Puzzle',
+        svg : 'M2.25 18 9 11.25l4.306 4.306a11.95 16.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941'
+      },
+      DressUp : {
+        name: 'Dress-up',
+        svg : 'M2.25 18 9 11.25l4.306 4.306a11.95 16.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941'
+      },
+      Adventure : {
+        name: 'Adventure',
+        svg : 'M2.25 18 9 11.25l4.306 4.306a11.95 16.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941'
+      },
+      Battle : {
+        name: 'Battle',
+        svg : 'M2.25 18 9 11.25l4.306 4.306a11.95 16.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941'
+      },
+      Art : {
+        name: 'Art',
+        svg : 'M2.25 18 9 11.25l4.306 4.306a11.95 16.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941'
+      },
+      Agility : {
+        name: 'Agility',
+        svg : 'M2.25 18 9 11.25l4.306 4.306a11.95 16.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941'
       }
     }
     return (
@@ -30,10 +56,11 @@ export default function NavBar(){
         </li>
         <li className='Categorias'>
         {Object.keys(categorias).map((categoria) => (
-          <SVG key={categoria} name={categorias[categoria].name} svg={categorias[categoria].svg} />
+          <SVG key={categoria} name={categorias[categoria].name} svg={categorias[categoria].svg} width={33}/>
         ))}
         </li>
         <li>
+          <Dropdown options={options} onChange={this} value={options[0]} placeholder="Select an option" />;
         </li>
         
       </ul>

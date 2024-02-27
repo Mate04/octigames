@@ -40,3 +40,22 @@
   );
   
 }
+
+.navbar ul .Categorias{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+}
+.navbar ul .Categorias .categoria {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: transform 0.2s ease
+}
+.navbar ul .Categorias .categoria:hover {
+  transform: scale(1.2); 
+}
+.navbar ul .Categorias .categoria .text{
+  font-weight: bold;
+  color: #fff;
+}
