@@ -44,16 +44,19 @@
 .navbar ul .Categorias{
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+  gap: 4px;
 }
 .navbar ul .Categorias .categoria {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  transition: transform 0.2s ease
+  transition: transform 0.2s ease;
+  border-radius: 10px;
 }
 .navbar ul .Categorias .categoria:hover {
   transform: scale(1.2); 
+  background-color: #004c8f;
 }
 .navbar ul .Categorias .categoria .text{
   font-weight: bold;
@@ -68,4 +71,7 @@
 }
 li.drop{
   align-self: baseline;
+}
+a.categoria.backGround {
+  background: #002546;
 }

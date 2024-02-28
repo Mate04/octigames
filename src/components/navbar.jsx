@@ -6,8 +6,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../../public/logo.png'
 import SVG from './svg/component';
-
+import Banner from './banner';
+import { usePathname } from 'next/navigation';
 export default function NavBar(){
+    const effect = usePathname()
     const options = ['Shooter', 'Casual', 'Puzzle', 'Dress-up', 'Adventure','Battle','Art','Agility'];
 
     const categorias = {
@@ -55,9 +57,13 @@ export default function NavBar(){
             <p>octiGames</p>
           </Link>
         </li>
+        {effect ==  '/game' ? <li>
+          <Banner width={320} height={50} keyAD={'50fe030e7eebde9adb8f09eee5febeac'}/>
+        </li> : <></>}
+        
         <li className='Categorias'>
         {Object.keys(categorias).map((categoria) => (
-          <SVG key={categoria} name={categorias[categoria].name} svg={categorias[categoria].svg} width={33}/>
+          <SVG backGround={effect} key={categoria} name={categorias[categoria].name} svg={categorias[categoria].svg} width={33}/>
         ))}
         </li>
         <li className='drop'>

@@ -1,0 +1,24 @@
+.OcuparPantallaNegro {
+    position: fixed; /* Fixed/sticky position */
+    top: 0; /* Stay at the top */
+    left: 0; /* Stay at the left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+.DisplayNone {
+    display: none;
+}
+.textInfo {
+    font-weight: bold;
+    padding: 10px;
+    background: black;
+    font-size: 15px;
+    color: white;
+}
