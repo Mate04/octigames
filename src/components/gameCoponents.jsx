@@ -7,7 +7,6 @@ import '../style/gampley.css'
 import Banner from '@/components/banner'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
-import Popunder from '@/components/popunder';
 import Share from '@/components/share';
 export async function GameComponent(){
     const url = useSearchParams()
@@ -16,7 +15,6 @@ export async function GameComponent(){
     const Description = url.get('Description')
       return (
         <>
-        <Popunder boolean={false}/>
         <div className='container-games'>
           <div className="cuadrado rectangulo1">
             <div className='home'>
