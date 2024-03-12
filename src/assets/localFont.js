@@ -10,3 +10,6 @@ export const biffBamBoom = localFont({
 export const technica = localFont({
     src: '../../public/font/technica-17.ttf'
 });
+export const bangersRegular = localFont({
+    src: '../../public/font/Bangers-Regular.ttf'
+});

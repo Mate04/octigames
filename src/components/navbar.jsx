@@ -8,7 +8,7 @@ import logo from '../../public/logo.webp'
 import SVG from './svg/component';
 import Banner from './banner';
 import { usePathname } from 'next/navigation';
-import { biffBamBoom} from '@/assets/localFont'
+import { bangersRegular} from '@/assets/localFont'
 export default function NavBar(){
     const effect = usePathname()
     const options = ['Shooter', 'Casual', 'Puzzle', 'Dress-up', 'Adventure','Battle','Art','Agility'];
@@ -55,7 +55,7 @@ export default function NavBar(){
         <li>
           <Link href={'/'} className='TITULO'>
             <Image  src={logo} alt='octiGames' width={125} className='tituloOcti-link-img'/>
-            <p className={`${biffBamBoom.className} title`}>octiGames</p>
+            <p className={`${bangersRegular.className} title`}>octiGames</p>
           </Link>
         </li>
         {effect ==  '/game' ? <li>
