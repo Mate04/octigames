@@ -4,6 +4,7 @@ import 'react-multi-carousel/lib/styles.css';
 import Card from './card'
 import { getApi } from '@/api/getSide';
 import VerMas from './carousel/verMas';
+import { technica } from "@/assets/localFont";
 export default async function Categoria({nombreCategoria = null, }) {
   const resultados  = await getApi(40,nombreCategoria);
   const resultadosFiltrados = resultados.map(resultado => {
@@ -64,11 +65,11 @@ export default async function Categoria({nombreCategoria = null, }) {
   return (
     <>
     {nombreCategoria === null ? 
-    <div className="titulo" id={'mis-juegos'}>
-      <div>Mis juegos</div>
+    <div className={`titulo ${technica.className}` }id={'mis-juegos'}>
+      <p>Mis juegos</p>
     </div>: 
-    <div className="titulo" id={nombreCategoria}>
-        <div>{nombreCategoria}</div>
+    <div className={`titulo ${technica.className}`} id={nombreCategoria}>
+        <p>{nombreCategoria}</p>
     </div>}
     
     <Carousel 

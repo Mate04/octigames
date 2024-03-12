@@ -8,19 +8,16 @@
 .titulo {
   align-self: center; /* Centra el título verticalmente */
   text-align: center; /* Centra el texto horizontalmente */
-  font-family: 'Inter', sans-serif;
-  font-family: 'Modak', system-ui;
+  
 }
-.titulo div {
-  font-size: 40px; /* Tamaño de fuente más grande */
-  letter-spacing: 3px;
+.titulo p {
+  font-size: 49px; /* Tamaño de fuente más grande */
   color: white;
-  filter: drop-shadow(
-    0 0 10px rgba(0,0,0,0.8)
-  );
-  filter: 2px solid black;
-   /* Texto en negrita */
+  letter-spacing: -1px; /* Espaciado de letras reducido */
+  -webkit-text-stroke: 1.3px black;
+  margin: 20px 0;
 }
+
 
 .react-multi-carousel-list  {
   padding: 10px 0;

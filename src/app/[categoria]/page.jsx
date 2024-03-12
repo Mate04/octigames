@@ -5,7 +5,7 @@ import { useParams } from 'next/navigation'
 import { getApi } from '../../api/getSide';
 import Link from 'next/link';
 import Spinner from '@/components/spinner';
-
+import { technica} from '@/assets/localFont'
 export default function Page() {
   const resultado = useParams();
   const categoria = resultado['categoria'];
@@ -61,7 +61,7 @@ export default function Page() {
     });
   return (
     <div className='containeerr'>
-      <div className='TituloCategoria modak-regular'>
+      <div className={`TituloCategoria ${technica.className}`}>
         {categoria}
       </div>
       <div className='Container-Categoria'>{ 

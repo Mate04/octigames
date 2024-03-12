@@ -4,10 +4,11 @@ import 'react-dropdown/style.css';
 import '../style/navbar.css'
 import Link from 'next/link';
 import Image from 'next/image';
-import logo from '../../public/logo.png'
+import logo from '../../public/logo.webp'
 import SVG from './svg/component';
 import Banner from './banner';
 import { usePathname } from 'next/navigation';
+import { biffBamBoom} from '@/assets/localFont'
 export default function NavBar(){
     const effect = usePathname()
     const options = ['Shooter', 'Casual', 'Puzzle', 'Dress-up', 'Adventure','Battle','Art','Agility'];
@@ -54,7 +55,7 @@ export default function NavBar(){
         <li>
           <Link href={'/'} className='TITULO'>
             <Image  src={logo} alt='octiGames' width={125} className='tituloOcti-link-img'/>
-            <p>octiGames</p>
+            <p className={`${biffBamBoom.className} title`}>octiGames</p>
           </Link>
         </li>
         {effect ==  '/game' ? <li>

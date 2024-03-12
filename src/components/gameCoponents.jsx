@@ -2,7 +2,7 @@
 //public\WhatsApp Image 2024-02-04 at 16.11.28_e551de90.jpg'//'../../../public/WhatsApp Image 2024-02-04 at 16.11.28_e551de90.jpg'//public\WhatsApp Image 2024-02-04 at 16.11.28_e551de90.jpg
 import '../style/game.css'
 import Image from 'next/image';
-import logo from '../../public/WhatsApp Image 2024-02-04 at 16.11.28_e551de90.jpg'
+import logo from '../../public/logo.webp'
 import '../style/gampley.css'
 import Banner from '@/components/banner'
 import Link from 'next/link'

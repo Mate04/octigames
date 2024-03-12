@@ -4,11 +4,11 @@
     grid-gap: 30px;
     grid-template-columns: repeat(10, 1fr);
   }
-  a {
-    text-decoration: none;
-    color: inherit;
+a {
+  text-decoration: none;
+  color: inherit;
 
-  }
+}
   .key-Children {
     height: 90%;
     width: 100%;
@@ -48,6 +48,8 @@
   .TituloCategoria{
     font-size: 50px;
     color: white;
+    letter-spacing: -1px; /* Espaciado de letras reducido */
+    -webkit-text-stroke: 1.3px black;
     filter: drop-shadow(
     0 0 10px rgba(0,0,0,0.8)
   );

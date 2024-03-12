@@ -26,13 +26,11 @@
 
 }
 .TITULO p {
-  font-size: 40px;
+  margin: 0;
+  font-size: 70px;
   font-weight: bold;
   color: #fff;
-  filter: drop-shadow(
-    0 0 10px rgba(0,0,0,0.8)
-  );
-  filter: 2px solid black; 
+  -webkit-text-stroke: 0.5px black;
 }
 .tituloOcti-link-img{
   filter: drop-shadow(
