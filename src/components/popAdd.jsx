@@ -21,7 +21,7 @@ export default function PopAdd() {
     <div className={`OcuparPantallaNegro ${isVisible ? '' : 'DisplayNone'}`} 
     onClick={handleClick}>
      
-        <Banner className='children' keyAD={"6151989d0c251db92854297e8526ed06"} height={250} width={300}/>
+        <Banner className='children' keyAD={"fdd03379505c73182b7fc6200a615c2b"} height={250} width={300}/>
         <div className='textInfo'>Puedes hacer click en cualquier parte de la pantalla para salir</div>
     </div>
   )

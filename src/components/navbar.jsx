@@ -59,7 +59,7 @@ export default function NavBar(){
           </Link>
         </li>
         {effect ==  '/game' ? <li>
-          <Banner width={320} height={50} keyAD={'50fe030e7eebde9adb8f09eee5febeac'}/>
+          <Banner width={320} height={50} keyAD={'6255d3c5fb923d4cc0f9a4c7fd594c5f'}/>
         </li> : <></>}
         
         <li className='Categorias'>

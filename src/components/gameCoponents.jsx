@@ -28,7 +28,7 @@ export async function GameComponent(){
             </Link>
             </div>
             <div className='add-left'>
-              <Banner keyAD={'9ce498e6cb4051785844ebe6be552e04'} height={300} width={160}/>
+              <Banner keyAD={'3239b73fcf003fd2be61d27a156dabc0'} height={300} width={160}/>
             </div>
           </div>
           <div id="rectangulo2" className="cuadrado contenidoJuego">{}
@@ -40,7 +40,7 @@ export async function GameComponent(){
             </div>
           </div>
           <div id="rectangulo3" className="cuadrado rectangulo3">
-            <Banner keyAD={'c3e602f43853a2460ed95f5522d1078e'} height={600} width={160}/>
+            <Banner keyAD={'80bb9c56da40368cfa31e6e1e2fda85e'} height={600} width={160}/>
           </div>
         </div>
         </>
