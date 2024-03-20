@@ -1,6 +1,5 @@
 'use client'
-import Dropdown from 'react-dropdown';
-import 'react-dropdown/style.css';
+
 import '../style/navbar.css'
 import Link from 'next/link';
 import Image from 'next/image';
@@ -9,9 +8,10 @@ import SVG from './svg/component';
 import Banner from './banner';
 import { usePathname } from 'next/navigation';
 import { bangersRegular} from '@/assets/localFont'
+import DropDown from '@/components/dropDown'
 export default function NavBar(){
     const effect = usePathname()
-    const options = ['Shooter', 'Casual', 'Puzzle', 'Dress-up', 'Adventure','Battle','Art','Agility'];
+    const options = ['Strategy','Football','Educational','Quiz','Simulation','Cards','Sports','Basketball','Care','Cooking','Jigsaw'];
 
     const categorias = {
       shooter : {
@@ -68,7 +68,7 @@ export default function NavBar(){
         ))}
         </li>
         <li className='drop'>
-          <Dropdown options={options} onChange={this} value={options[0]} placeholder="Select an option" />;
+          <DropDown listaJuegos={options}/>
         </li>
         
       </ul>
