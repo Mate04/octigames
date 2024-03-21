@@ -2,7 +2,7 @@
     padding: 10px 35px;
     display: grid;
     grid-gap: 30px;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
   }
 a {
   text-decoration: none;
@@ -84,39 +84,22 @@ a {
     font-size: 2em;
     font-weight: bold;
   }
-  @media (max-width: 1700px) {
-    .Container-Categoria {
-      grid-template-columns: repeat(8, 1fr);
-    }
+ @media (max-width:800px){
+  .key-Children{
+    font-size: 1em;
   }
-  @media (max-width: 1300px) {
-    .Container-Categoria {
-      grid-template-columns: repeat(7, 1fr);
-    }
+  .key-Children:hover{
+    font-size: 110%;
   }
-  @media (max-width: 1200px) {
-    .Container-Categoria {
-      grid-template-columns: repeat(6, 1fr);
-    }
+  .Container-Categoria{
+  grid-template-columns: repeat(auto-fill,minmax(80px,1fr));
   }
-  
-  /* Cuando la pantalla tenga menos de 900px de ancho, se mostrarán 6 columnas */
-  @media (max-width: 1000px) {
-    .Container-Categoria {
-      grid-template-columns: repeat(4, 1fr);
-    }
+ }
+ @media (max-width:600px){
+  .key-Children{
+    font-size: 0.85em;
   }
-  
-  /* Cuando la pantalla tenga menos de 600px de ancho, se mostrarán 4 columnas */
-  @media (max-width: 700px) {
-    .Container-Categoria {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .Container-Categoria{
+  grid-template-columns: repeat(auto-fill,minmax(60px,1fr));
   }
-  
-  /* Cuando la pantalla tenga menos de 400px de ancho, se mostrarán 2 columnas */
-  @media (max-width: 400px) {
-    .Container-Categoria {
-      grid-template-columns: repeat(1, 1fr);
-    }
-  }
+ }

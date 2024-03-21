@@ -33,7 +33,7 @@
     flex-direction : column;
     right: 0;
     left: 0;
-    z-index: 1;
+    z-index: 1001;
   }
   
   .dropdown__ul li {
@@ -60,3 +60,15 @@
 .image-rotate {
   transform: rotate(-180deg);
 }
+
+@media (max-width: 1000px) {
+  .dropdown{
+    width: 100px;
+  }
+  .dropdown p{
+    display: none;
+  }
+}
+
+
+

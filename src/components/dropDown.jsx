@@ -11,7 +11,7 @@ export default function DropDown({listaJuegos }) {
     return (
     <div className='dropdown'>
         <button onClick={()=>{setOpen(!open)}}>
-        <p>
+        <p className='dropdowntext'>
         {!res || res == 'game' ? 'Mas Juegos'.toUpperCase() : res.toUpperCase() }
         </p>
         {open ? <Image className='transition' alt='res' src={arrow} width={19}/> : <Image alt='res' className='transition image-rotate' src={arrow} width={19}/>}

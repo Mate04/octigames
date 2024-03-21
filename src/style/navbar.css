@@ -67,3 +67,32 @@ li.drop{
 a.categoria.backGround {
   background: #002546;
 }
+
+@media (max-width: 1300px) {
+  .navbar ul .Categorias{
+    display: none;
+  }
+}
+
+@media (max-width: 1300px){
+  .TITULO p {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 800px){
+  .TITULO p {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 800px){
+  .navbar ul{
+    justify-content:space-evenly;
+    flex-direction:column;
+    align-items:center;
+  }
+  .dropdown {
+    display: none;
+  }
+}
