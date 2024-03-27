@@ -41,16 +41,19 @@ export default function Page() {
             {categoria}
           </div>
           <div className='Container-Categoria'>{ 
-            data.map((datas, index)=>(
+            data.map((datas, index)=>{
+              const url = datas.url.split("/")
+              const md5 = url[url.length - 2];
+              return(
               <div key={index} >
-                <Link className='key-Children' href={`/`}>
+                <Link className='key-Children' href={`game?Title=${datas.title}&Description=${datas.description}&Md5=${md5}`}>
                   <img src={datas.thumb} alt={datas.title} className='Imagen-key'/>
                 <p>
                   {datas.title}
                 </p>
                 </Link>
               </div>
-            ))
+            )})
             }</div>
         </div>
         )
