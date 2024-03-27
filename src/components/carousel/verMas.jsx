@@ -1,5 +1,4 @@
-"use client"
-import React from 'react'
+
 import Link from 'next/link'
 import '../../style/verMass.css'
 export default function VerMas({nombreCategorias}) {

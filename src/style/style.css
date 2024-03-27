@@ -1,18 +1,17 @@
 .card {
-  width: 100%;
-  height: 350px;
-  margin-right: 10px;
+  width: 320px;
+  height: 250px;
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Define dos columnas igualmente espaciadas */
-  gap: 2px;
+  gap: 5px;
 }
 
 .children{
   display: flex;
   justify-content: center; /* Centra horizontalmente */
   align-items: center;
-  height: 150px;
-  width: 150px;
+  height: 100%;
+  width: 100%;
   border-radius: 10px;
 }
 .children img {

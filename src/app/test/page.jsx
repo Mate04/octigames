@@ -1,8 +1,39 @@
-import React from 'react'
-export default function Hola() {
+'use client'
+import CategoriaV2 from '@/components/CategoriaV2';
+
+export default  function Hola() {
+  const categorias = {
+    "All": "All",
+    "1": ".IO",
+    "2": "2 Player",
+    "3": "3D",
+    "0": "Action",
+    "4": "Adventure",
+    "5": "Arcade",
+    "19": "Baby Hazel",
+    "6": "Bejeweled",
+    "7": "Boys",
+    "8": "Clicker",
+    "9": "Cooking",
+    "10": "Girls",
+    "11": "Hypercasual",
+    "12": "Multiplayer",
+    "13": "Puzzle",
+    "14": "Racing",
+    "15": "Shooting",
+    "16": "Soccer",
+    "17": "Sports",
+    "18": "Stickman"
+}
+  const categoriasArray = Object.entries(categorias);
   return (
     <>
-    <iframe src="https://html5.gamemonetize.co/bskdf3wrorqo4ihz2b5unrvqtvk2rbeo/" width="800" height="600" scrolling="none" frameborder="0"></iframe>
+    {
+        // Recorrer los primeros 6 elementos del array
+        categoriasArray.slice(0, 6).map(([llave, valor]) => (
+          <CategoriaV2 key={llave} numeroCategoria={llave} nombreCategoria={valor} />
+        ))
+      }
     </>
-  )
+  );
 }
