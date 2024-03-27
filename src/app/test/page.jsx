@@ -1,7 +1,7 @@
 'use client'
 import CategoriaV2 from '@/components/CategoriaV2';
 
-export default  function Hola() {
+export default  function Page() {
   const categorias = {
     "All": "All",
     "12": "Multiplayer",
