@@ -1,7 +1,8 @@
 import React from 'react'
-import DropDown from '@/components/dropDown'
 export default function Hola() {
   return (
-    <DropDown/>
+    <>
+    <iframe src="https://html5.gamemonetize.co/bskdf3wrorqo4ihz2b5unrvqtvk2rbeo/" width="800" height="600" scrolling="none" frameborder="0"></iframe>
+    </>
   )
 }
