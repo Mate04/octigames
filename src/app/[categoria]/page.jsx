@@ -2,83 +2,58 @@
 import '../../style/categoria.css'
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation'
-import { getApi } from '../../api/getSide';
+import getApiV2 from '@/api/getSideV2';
 import Link from 'next/link';
 import Spinner from '@/components/spinner';
 import { technica} from '@/assets/localFont'
 export default function Page() {
   const resultado = useParams();
   const categoria = resultado['categoria'];
-  const [dataGame, setData] = useState(null);
-  const [count, setCount] = useState(1);
-  const [hasMoreResults, setHasMoreResults] = useState(true);
-  
-  useEffect(()=>{
-    const fetchData = async () => {
-      const response = await getApi(100, categoria,1);
-      setData(response);
-    };
-    fetchData();
-  },[categoria])
-  
-  const load = async () =>{
-    await setCount(count+1)
-    const response = await getApi(100, categoria,count);
-    if (response.length === 0) {
-      
-      setHasMoreResults(false);
-    } else {
-      setData(prevData => {
-        const newData = [...prevData, ...response];
-        return newData;
-      });
-    }
-  }
-
-  
-  
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || !hasMoreResults) return;
-      load();
-    }
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [hasMoreResults, load]);
-
-  if ( dataGame) {
-    const resultadosFiltrados = dataGame.map(resultado => {
-    return {
-      Title: resultado.Title,
-      Description: resultado.Description,
-      Md5: resultado.Md5,
-      Height: resultado.Height,
-      Width: resultado.Width,
-      ThirdAssetElement: resultado.Asset.filter(url => url.includes('512x512'))[0],
-      CategoryList: resultado.Category,
-      Tags: resultado.Tag
-    };
-    });
-  return (
-    <div className='containeerr'>
-      <div className={`TituloCategoria ${technica.className}`}>
-        {categoria}
-      </div>
-      <div className='Container-Categoria'>{ 
-        resultadosFiltrados.map((data, index)=>(
-          <div key={index} >
-            <Link className='key-Children' href={`/game?Md5=${data.Md5}&Title=${data.Title}&Description=${data.Description}&Height=${data.Height}&Width=${data.Width}`}>
-              <img src={data.ThirdAssetElement} alt={data.Title} className='Imagen-key'/>
-            <p>
-              {data.Title}
-            </p>
-            </Link>
+  console.log(categoria);
+  const info = {
+    "All": "All",
+    ".IO": "1",
+    "2 Player": "2",
+    "3D": "3",
+    "Action": "0",
+    "Adventure": "4",
+    "Arcade": "5",
+    "Baby Hazel": "19",
+    "Bejeweled": "6",
+    "Boys": "7",
+    "Clicker": "8",
+    "Cooking": "9",
+    "Girls": "10",
+    "Hypercasual": "11",
+    "Multiplayer": "12",
+    "Puzzle": "13",
+    "Racing": "14",
+    "Shooting": "15",
+    "Soccer": "16",
+    "Sports": "17",
+    "Stickman": "18"
+}
+  return getApiV2('All',info[categoria]).then(data => {
+    return (
+      (
+        <div className='containeerr'>
+          <div className={`TituloCategoria ${technica.className}`}>
+            {categoria}
           </div>
-        ))
-        }</div>
-    </div>
+          <div className='Container-Categoria'>{ 
+            data.map((datas, index)=>(
+              <div key={index} >
+                <Link className='key-Children' href={`/`}>
+                  <img src={datas.thumb} alt={datas.title} className='Imagen-key'/>
+                <p>
+                  {datas.title}
+                </p>
+                </Link>
+              </div>
+            ))
+            }</div>
+        </div>
+        )
     )
+  })
   }
-else {
-  return (<Spinner/>)
-}}

@@ -4,6 +4,7 @@ import CategoriaV2 from '@/components/CategoriaV2';
 export default  function Hola() {
   const categorias = {
     "All": "All",
+    "12": "Multiplayer",
     "1": ".IO",
     "2": "2 Player",
     "3": "3D",
@@ -17,7 +18,7 @@ export default  function Hola() {
     "9": "Cooking",
     "10": "Girls",
     "11": "Hypercasual",
-    "12": "Multiplayer",
+    
     "13": "Puzzle",
     "14": "Racing",
     "15": "Shooting",
@@ -26,13 +27,20 @@ export default  function Hola() {
     "18": "Stickman"
 }
   const categoriasArray = Object.entries(categorias);
+  
   return (
     <>
-    {
+      <CategoriaV2 numeroCategoria={'mostplayed'} nombreCategoria={'Los mas populares'} popularity=''/>
+      <CategoriaV2 numeroCategoria={'All'} nombreCategoria={'Mas juegos'}/>
+      {
         // Recorrer los primeros 6 elementos del array
-        categoriasArray.slice(0, 6).map(([llave, valor]) => (
-          <CategoriaV2 key={llave} numeroCategoria={llave} nombreCategoria={valor} />
-        ))
+        categoriasArray.map(([llave, valor]) => {
+          if (['0','12','5','17'].includes(llave)) {
+            return (
+              <CategoriaV2 key={llave} numeroCategoria={llave} nombreCategoria={valor}/>
+            )
+          }
+        })
       }
     </>
   );

@@ -32,7 +32,7 @@ export async function GameComponent(){
             </div>
           </div>
           <div id="rectangulo2" className="cuadrado contenidoJuego">{}
-            <iframe src={`https://html5.gamedistribution.com/${Md5}/?gd_sdk_referrer_url=https:https://octigames.vercel.app/&language=es`} width="800" height="600" scrolling="none" frameborder="0"></iframe>
+            <iframe src={`https://html5.gamemonetize.co/${Md5}/`} width="800" height="600" scrolling="none" frameborder="0"></iframe>
             <div className='info'>
               <Share/>
               <h1>{Title}</h1>

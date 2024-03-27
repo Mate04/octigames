@@ -5,12 +5,9 @@ import getApiV2 from '@/api/getSideV2';
 import responsive from '@/api/responsive';
 import Card from './cardV2';
 import { technica } from "@/assets/localFont";
-
-export default async function CategoriaV2({numeroCategoria='All',nombreCategoria='Todos los Juegos'}) {
+import getCategoria from '@/api/getCategoria';
+export default function CategoriaV2({numeroCategoria='All',nombreCategoria='Todos los Juegos',popularity='branding'}) {
     const responsiv = responsive()
-    console.log(numeroCategoria);
-    const res = await getApiV2(40,numeroCategoria)
-    
     const chunkArray = (array, chunkSize) => {
         const chunks = [];
         for (let i = 0; i < array.length; i += chunkSize) {
@@ -18,24 +15,64 @@ export default async function CategoriaV2({numeroCategoria='All',nombreCategoria
         }
         return chunks;
     };
-    const subResultados = chunkArray(res, 4);
+    const res = getCategoria(numeroCategoria)
+    const resultado = res.map(item => ({
+        id: item.id,
+        description: item.description,
+        title: item.title,
+        url: item.url,
+        thumb: item.thumb,
+        width: item.width,
+        height: item.height
+    }));
+    const subResultados = chunkArray(resultado,4)
+    /*
     
-    return (
-        <>
-        <div className={`titulo ${technica.className}` }id={nombreCategoria}>
-            <p>{nombreCategoria}</p>
-        </div>
-        <Carousel 
-        responsive={responsiv}
-        infinite={true}
-        rtl={false}
-        autoPlay={false}
-        ssr={true}
-        >
-            {subResultados.map((subResultado, index) => (
-          <Card key={index} juegos={subResultado} />
-                ))}
-        </Carousel>
+    
+    return getApiV2(40,numeroCategoria,popularity)
+        .then(res => {
+            const subResultados = chunkArray(res, 4);
+            return (
+                <>
+                <div className={`titulo ${technica.className}` }id={nombreCategoria}>
+                    <p>{nombreCategoria}</p>
+                </div>
+                <Carousel 
+                responsive={responsiv}
+                infinite={true}
+                rtl={false}
+                autoPlay={false}
+                ssr={true}
+                >
+                    {subResultados.map((subResultado, index) => (
+                <Card key={index} juegos={subResultado} />
+                    ))
+                    }
+                </Carousel>
+                </>
+            )
+        })
+        .catch(error => {
+            console.error('Error al obtener los datos de la API:', error);
+            throw error;
+        });
+        */
+        return (
+            <>
+            <div className={`titulo ${technica.className}` }id={nombreCategoria}>
+                <p>{nombreCategoria}</p>
+            </div>
+            <Carousel 
+            responsive={responsiv}
+            infinite={true}
+            rtl={false}
+            autoPlay={false}
+            ssr={true}
+            >
+                {subResultados.map((subResultado, index) => (
+            <Card key={index} juegos={subResultado} />
+                ))
+                }
+            </Carousel>
         </>
-    )
-}
+)}
