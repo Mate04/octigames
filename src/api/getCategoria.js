@@ -1,7 +1,6 @@
 
 
 export default function getCategoria(numero){
-    console.log(numero);
     const categoria = {
         "1":[
             {

@@ -11,23 +11,37 @@ import { bangersRegular} from '@/assets/localFont'
 import DropDown from '@/components/dropDown'
 export default function NavBar(){
     const effect = usePathname()
-    const options = ['Strategy','Football','Educational','Quiz','Simulation','Cards','Sports','Basketball','Care','Cooking','Jigsaw'];
-
+    const gameCategories = [
+      ".IO",
+      "3D",
+      "Baby Hazel",
+      "Bejeweled",
+      "Boys",
+      "Clicker",
+      "Cooking",
+      "Girls",
+      "Hypercasual",
+      "Puzzle",
+      "Racing",
+      "Soccer",
+      "Stickman"
+  ];
+  
     const categorias = {
       shooter : {
-        name: 'Shooter',
+        name: 'Multiplayer',
         svg : 'M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941'
       },
       casual : {
-        name: 'casual',
+        name: 'Sports',
         svg : 'M2.25 18 9 11.25l4.306 4.306a11.95 16.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941'
       },
       Puzzle : {
-        name: 'Puzzle',
+        name: 'Arcade',
         svg : 'M2.25 18 9 11.25l4.306 4.306a11.95 16.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941'
       },
       DressUp : {
-        name: 'Dress-up',
+        name: '2 Player',
         svg : 'M2.25 18 9 11.25l4.306 4.306a11.95 16.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941'
       },
       Adventure : {
@@ -35,15 +49,15 @@ export default function NavBar(){
         svg : 'M2.25 18 9 11.25l4.306 4.306a11.95 16.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941'
       },
       Battle : {
-        name: 'Battle',
+        name: 'Action',
         svg : 'M2.25 18 9 11.25l4.306 4.306a11.95 16.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941'
       },
       Art : {
-        name: 'Art',
+        name: 'Shooting',
         svg : 'M2.25 18 9 11.25l4.306 4.306a11.95 16.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941'
       },
       Agility : {
-        name: 'Agility',
+        name: 'Stickman',
         svg : 'M2.25 18 9 11.25l4.306 4.306a11.95 16.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941'
       }
     }
@@ -68,7 +82,7 @@ export default function NavBar(){
         ))}
         </li>
         <li className='drop'>
-          <DropDown listaJuegos={options}/>
+          <DropDown listaJuegos={gameCategories}/>
         </li>
         
       </ul>

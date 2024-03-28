@@ -12,7 +12,7 @@ export default function DropDown({listaJuegos }) {
     <div className='dropdown'>
         <button onClick={()=>{setOpen(!open)}}>
         <p className='dropdowntext'>
-        {!res || res == 'game' ? 'Mas Juegos'.toUpperCase() : res.toUpperCase() }
+        {!res || res == 'game' ? 'Mas Juegos'.toUpperCase() : res.toUpperCase().replace('%',' ') }
         </p>
         {open ? <Image className='transition' alt='res' src={arrow} width={19}/> : <Image alt='res' className='transition image-rotate' src={arrow} width={19}/>}
         </button>

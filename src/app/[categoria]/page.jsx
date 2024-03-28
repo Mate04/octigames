@@ -8,8 +8,8 @@ import Spinner from '@/components/spinner';
 import { technica} from '@/assets/localFont'
 export default function Page() {
   const resultado = useParams();
-  const categoria = resultado['categoria'];
-  console.log(categoria);
+  const categoria = resultado['categoria'].replace('%20',' ');
+  const [res, setRes] = useState([])
   const info = {
     "All": "All",
     ".IO": "1",
@@ -33,7 +33,10 @@ export default function Page() {
     "Sports": "17",
     "Stickman": "18"
 }
-  return getApiV2('All',info[categoria]).then(data => {
+  const categoriaSearch = info[categoria] || 'All'
+  
+  return getApiV2('All',categoriaSearch).then(data => {
+    console.log(data.length);
     return (
       (
         <div className='containeerr'>
