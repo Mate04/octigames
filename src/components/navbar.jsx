@@ -9,6 +9,7 @@ import Banner from './banner';
 import { usePathname } from 'next/navigation';
 import { bangersRegular} from '@/assets/localFont'
 import DropDown from '@/components/dropDown'
+import Search from './search';
 export default function NavBar(){
     const effect = usePathname()
     const gameCategories = [
@@ -84,7 +85,9 @@ export default function NavBar(){
         <li className='drop'>
           <DropDown listaJuegos={gameCategories}/>
         </li>
-        
+        <li className='qsy'>
+          <Search/>
+        </li>
       </ul>
       
     </nav>

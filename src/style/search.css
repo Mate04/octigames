@@ -1,0 +1,74 @@
+/* search.css */
+.qsy{
+    width: 150px;
+    margin-right: 50px;
+    margin-left: -40px;
+}
+
+.search {
+    width: 220px;
+    position: relative;
+    margin: 30px 10px;
+    margin-top: 12px;
+}
+.search input[type="text"] {
+    /* Estilos para el input de texto */
+    width: 150px;
+    height: 30px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+
+
+.resultadosForm {
+    /* Estilos para el contenedor de resultados */
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 4px;
+    position: absolute;
+    top:100px;
+    right: 0px;
+    z-index: 300000;
+    background-color: #004c8f;
+    border-radius: 10px;
+    border: 3px solid #000;
+    color: white;
+    margin: 5px;
+    padding: 5px;
+}
+
+.resultadosForm a {
+    text-decoration: none;
+    /* Estilos para cada resultado */
+    width: 95%;
+    border-radius: 4px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 5px;
+    gap: 4px;
+}
+.resultadosForm a:hover{
+    scale: 1.01;
+    background-color: #013d71;
+    border: 0.5px solid #000;
+}
+
+.resultadosForm a h1 {
+    /* Estilos para el título del juego */
+    width: 50%;
+    font-size: 18px;
+}
+
+
+
+.imagenRes{
+    width: 40%;
+    object-fit: contain;
+}
+
