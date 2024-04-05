@@ -16,7 +16,7 @@ export default function Search() {
     
     return (
         <>
-        <form action="" className='search'>
+        <form action="" className='search' autoComplete='off'>
             <label htmlFor="game-search"></label>
             <input type="text" id="game-search" placeholder='Buscar Juego' value={inputValue} onChange={handleInputChange} />
         </form>
