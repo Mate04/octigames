@@ -8,6 +8,7 @@ import Banner from '@/components/banner'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import Share from '@/components/share';
+import CategoriaV2 from '@/components/CategoriaV2';
 export async function GameComponent(){
     const url = useSearchParams()
     const Md5 = url.get('Md5')
@@ -43,6 +44,7 @@ export async function GameComponent(){
             <Banner keyAD={'80bb9c56da40368cfa31e6e1e2fda85e'} height={600} width={160}/>
           </div>
         </div>
+        <CategoriaV2 numeroCategoria="17" nombreCategoria="Juegos para vos"/>
         </>
       )
   }
