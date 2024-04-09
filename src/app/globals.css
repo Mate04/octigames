@@ -8,3 +8,6 @@ body {
   font-family: "Modak", system-ui;
   font-style: normal;
 }
+a {
+  text-decoration: none;
+}

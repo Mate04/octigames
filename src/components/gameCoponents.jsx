@@ -36,8 +36,6 @@ export async function GameComponent(){
             <iframe src={`https://html5.gamemonetize.co/${Md5}/`} width="800" height="600" scrolling="none" frameborder="0"></iframe>
             <div className='info'>
               <Share/>
-              <h1>{Title}</h1>
-              <p>{Description}</p>
             </div>
           </div>
           <div id="rectangulo3" className="cuadrado rectangulo3">

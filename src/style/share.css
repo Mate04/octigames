@@ -1,23 +1,31 @@
 .share{
-    margin: 10px auto 0 auto;
     border: 1px #fff solid;
-    width: 30%;
+    width: 200px;
     height: 50px;
     background: #00729e;
     border-radius: 10px;
+    padding: 0 10px;
+    margin-top: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .share ul {
     display: flex;
     justify-content: center;
     align-items: center;
     list-style-type: none;
+    gap: 0.5em;
+    position: relative;
+    margin: 0;
     padding: 0;
-    margin: 3%;
-    gap: 30px;
 }
 .share ul li {
     color: white;
     transition: color 0.9s ease;
+}
+.none{
+    text-decoration: none;
 }
 .whatsapp:hover{
     color: rgb(2, 203, 2);
