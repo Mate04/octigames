@@ -4,13 +4,13 @@ import Banner from './banner'
 import '../style/popAdd.css'
 
 export default function PopAdd() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false); // Cambiado a false para que el componente no se inicie inmediatamente
+
   useEffect(() => {
-  const randomTime = Math.floor(Math.random() * (15 - 3 + 1) + 3) * 60000;
-    const timer = setInterval(() => {
+    const timer = setTimeout(() => {
       setIsVisible(true);
-    }, randomTime); //180000 ms son 3 minutos
-    return () => clearInterval(timer); // Limpiar el temporizador cuando el componente se desmonte
+    }, 2000); // 15000 ms son 15 segundos
+    return () => clearTimeout(timer); // Limpiar el temporizador cuando el componente se desmonte
   }, []);
 
   const handleClick = () => {

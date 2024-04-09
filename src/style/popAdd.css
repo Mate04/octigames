@@ -12,6 +12,7 @@
     flex-direction: column;
     gap: 30px;
     z-index: 1200;
+    backdrop-filter: blur(5px);
 }
 .DisplayNone {
     display: none;
