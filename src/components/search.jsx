@@ -11,29 +11,35 @@ export default function Search() {
         setInputValue(event.target.value);
         const results = searchGame(event.target.value);
         setRes(results)
-         // Aquí puedes manejar los resultados como prefieras
+        // Aquí puedes manejar los resultados como prefieras
     }
-    
+
     return (
         <>
-        <form action="" className='search' autoComplete='off'>
-            <label htmlFor="game-search"></label>
-            <input type="text" id="game-search" placeholder='Buscar Juego' value={inputValue} onChange={handleInputChange} />
-        </form>
-        {inputValue.trim() && (
-            <div className='resultadosForm'>
-            {res.length > 0 ? (
-                res.map((juego,index) => (
-                    <Link key={index} href={`/game?Title=${juego.title}&Description=${juego.description}&Md5=${juego.md5}`}>
-                        <img src={juego.thumb} className='imagenRes'/>
-                        <h1>{juego.title}</h1>
-                    </Link>
-                ))
-            ) : (
-                <p>No se encontraron resultados</p>
+            <form action="" className='search' autoComplete='off'>
+                <label htmlFor="game-search"></label>
+                <input type="text" id="game-search" placeholder='Buscar Juego' value={inputValue} onChange={handleInputChange} />
+            </form>
+            {inputValue.trim() && (
+                <div className='resultadosForm'>
+                    {res.length > 0 ? (
+                        res.map((juego, index) => (
+                            <Link
+                                key={index}
+                                href={`/game?Title=${juego.title}&Description=${juego.description}&Md5=${juego.md5}`}
+                                onClick={() => {
+                                    setInputValue('')
+                                    setRes([])
+                                }}>
+                                <img src={juego.thumb} className='imagenRes' />
+                                <h1>{juego.title}</h1>
+                            </Link>
+                        ))
+                    ) : (
+                        <p>No se encontraron resultados</p>
+                    )}
+                </div>
             )}
-            </div>
-        )}
         </>
     )
 }
