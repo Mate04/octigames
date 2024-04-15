@@ -1,13 +1,5 @@
 #GameMonetize.com
-google.com, pub-5519830896693885, DIRECT, f08c47fec0942fa0
-google.com, pub-4764333688337558, DIRECT, f08c47fec0942fa0
-google.com, pub-1026343505820086, DIRECT, f08c47fec0942fa0
-google.com, pub-7002491002409919, DIRECT, f08c47fec0942fa0
-google.com, pub-9834921707786629, DIRECT, f08c47fec0942fa0
-google.com, pub-6261920351485424, DIRECT, f08c47fec0942fa0
-google.com, pub-3218843770801011, DIRECT, f08c47fec0942fa0
-google.com, pub-6987270876834820, DIRECT, f08c47fec0942fa0
-google.com, pub-4573231550355221, RESELLER, f08c47fec0942fa0
+google.com, pub-9727536664872197, DIRECT, f08c47fec0942fa0
 pubmatic.com, 160907, DIRECT, 5d62403b186f2ace
 indexexchange.com, 194273, DIRECT, 50b1c356f2c5c8fc
 media.net, 8CU5DERG1, DIRECT
@@ -18,7 +10,6 @@ lijit.com, 357833, DIRECT, fafdf38b16bf6b2b
 lijit.com, 357833-eb, DIRECT, fafdf38b16bf6b2b
 advertising.com, 28246, RESELLER
 rubiconproject.com, 11006, RESELLER, 0bfd66d529a55807
-google.com, pub-3769010358500643, RESELLER, f08c47fec0942fa0
 freewheel.tv, 20393, RESELLER
 freewheel.tv, 24377, RESELLER
 onetag.com, 75ab9ccdd190228, DIRECT
@@ -26,8 +17,6 @@ yahoo.com, 58905, RESELLER, e1a5b5b6e3255540
 aol.com, 58905, RESELLER, e1a5b5b6e3255540
 appnexus.com, 13099, RESELLER
 smartadserver.com, 4111, RESELLER
-google.com, pub-8309773808661346, RESELLER, f08c47fec0942fa0
-google.com, pub-6733417337840393, DIRECT, f08c47fec0942fa0
 pubmatic.com, 157335, DIRECT, 5d62403b186f2ace
 rubiconproject.com, 19654, DIRECT, 0bfd66d529a55807
 smartadserver.com, 3277, RESELLER
@@ -57,10 +46,4 @@ pubmatic.com, 156736, DIRECT, 5d62403b186f2ace
 criteo.com, 155036, DIRECT 
 criteo.com, 174835, DIRECT
 criteo.com, B-059025, DIRECT, 9fac4a4a87c2a44f
-google.com, pub-9378724246417115, DIRECT, f08c47fec0942fa0
-google.com, pub-7002491002409919, RESELLER, f08c47fec0942fa0
-google.com, pub-7002491002409919, DIRECT, f08c47fec0942fa0
 adingo.jp,26007, RESELLER
-
-
-google.com, pub-5954368203536289, DIRECT, f08c47fec0942fa0
