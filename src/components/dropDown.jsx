@@ -4,6 +4,7 @@ import '../style/dropdown.css'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import arrow from '../../public/arrow.png'
+import { BiSolidChevronDown } from "react-icons/bi";
 import Image from 'next/image'
 export default function DropDown({listaJuegos }) {
     const [open, setOpen] = useState(false)
@@ -12,9 +13,9 @@ export default function DropDown({listaJuegos }) {
     <div className='dropdown'>
         <button onClick={()=>{setOpen(!open)}}>
         <p className='dropdowntext'>
-        {!res || res == 'game' ? 'Mas Juegos'.toUpperCase() : res.toUpperCase().replace('%',' ') }
+        {!res || res == 'game' ? 'Categoria' : res.toUpperCase().replace('%',' ') }
         </p>
-        {open ? <Image className='transition' alt='res' src={arrow} width={19}/> : <Image alt='res' className='transition image-rotate' src={arrow} width={19}/>}
+        {open ? <BiSolidChevronDown size={30} style={{ color: "#fff" }} /> : <BiSolidChevronDown className='transition image-rotate' style={{ color: "#fff" }} size={30}/>}
         </button>
         {open && (
         <ul className='dropdown__ul'>

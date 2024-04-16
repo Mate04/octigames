@@ -13,11 +13,10 @@ export async function GameComponent(){
     const url = useSearchParams()
     const Md5 = url.get('Md5')
     const Title = url.get('Title')
-    const Description = url.get('Description')
       return (
         <>
         <div className='container-games'>
-          <div className="cuadrado rectangulo1">
+          <div className="square">
             <div className='home'>
             <Link href={'/'} className='link-qsy'>
               <Image src={logo} alt='s' className='imagen'/>
@@ -32,13 +31,13 @@ export async function GameComponent(){
               <Banner keyAD={'3239b73fcf003fd2be61d27a156dabc0'} height={300} width={160}/>
             </div>
           </div>
-          <div id="rectangulo2" className="cuadrado contenidoJuego">{}
-            <iframe src={`https://html5.gamemonetize.co/${Md5}/`} width="800" height="600" scrolling="none" frameborder="0"></iframe>
+          <div className="square">
+            <iframe src={`https://html5.gamemonetize.co/${Md5}/`} width="100%" height="100%" scrolling="none" frameBorder="0" style={{ borderRadius: "10px" }}></iframe>
             <div className='info'>
-              <Share/>
+              <p>{Title}</p>
             </div>
           </div>
-          <div id="rectangulo3" className="cuadrado rectangulo3">
+          <div className="square">
             <Banner keyAD={'80bb9c56da40368cfa31e6e1e2fda85e'} height={600} width={160}/>
           </div>
         </div>

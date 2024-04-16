@@ -6,7 +6,7 @@ import '../style/spid.css'
 const Spinner = () => {
     return (
         <>
-        <div className='ocuparTodaLaPagina'><div class="containerSpid"></div></div>
+        <div className='ocuparTodaLaPagina'><div className="containerSpid"></div></div>
         </>
     )
 }

@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { searchGame } from "@/service/search"
 import Link from 'next/link';
+import { AiOutlineSearch } from "react-icons/ai";
 
 import '../style/search.css'
 export default function Search() {
@@ -18,7 +19,7 @@ export default function Search() {
         <>
             <form action="" className='search' autoComplete='off'>
                 <label htmlFor="game-search"></label>
-                <input type="text" id="game-search" placeholder='Buscar Juego' value={inputValue} onChange={handleInputChange} />
+                <input type="text" id="game-search"  placeholder="buscar &#x1F50D;" value={inputValue} onChange={handleInputChange} />
             </form>
             {inputValue.trim() && (
                 <div className='resultadosForm'>

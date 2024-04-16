@@ -31,7 +31,7 @@ export default  function Page() {
   return (
     <>
       <CategoriaV2 numeroCategoria={'mostplayed'} nombreCategoria={'Los mas populares'} popularity=''/>
-      <CategoriaV2 numeroCategoria={'All'} nombreCategoria={'Mas juegos'}/>
+      <CategoriaV2 numeroCategoria={'All'} nombreCategoria={'Categoria'}/>
       {
         // Recorrer los primeros 6 elementos del array
         categoriasArray.map(([llave, valor]) => {

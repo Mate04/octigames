@@ -6,7 +6,7 @@ import responsive from '@/api/responsive';
 import Card from './cardV2';
 import { technica } from "@/assets/localFont";
 import getCategoria from '@/api/getCategoria';
-export default function CategoriaV2({numeroCategoria='All',nombreCategoria='Todos los Juegos',popularity='branding'}) {
+export default function CategoriaV2({ numeroCategoria = 'All', nombreCategoria = 'Todos los Juegos', popularity = 'branding' }) {
     const responsiv = responsive()
     const chunkArray = (array, chunkSize) => {
         const chunks = [];
@@ -25,54 +25,21 @@ export default function CategoriaV2({numeroCategoria='All',nombreCategoria='Todo
         width: item.width,
         height: item.height
     }));
-    const subResultados = chunkArray(resultado,4)
-    /*
-    
-    
-    return getApiV2(40,numeroCategoria,popularity)
-        .then(res => {
-            const subResultados = chunkArray(res, 4);
-            return (
-                <>
-                <div className={`titulo ${technica.className}` }id={nombreCategoria}>
-                    <p>{nombreCategoria}</p>
-                </div>
-                <Carousel 
+    const subResultados = chunkArray(resultado, 3)
+
+    return (
+        <>
+            <Carousel
                 responsive={responsiv}
                 infinite={true}
                 rtl={false}
                 autoPlay={false}
                 ssr={true}
-                >
-                    {subResultados.map((subResultado, index) => (
-                <Card key={index} juegos={subResultado} />
-                    ))
-                    }
-                </Carousel>
-                </>
-            )
-        })
-        .catch(error => {
-            console.error('Error al obtener los datos de la API:', error);
-            throw error;
-        });
-        */
-        return (
-            <>
-            <div className={`titulo ${technica.className}` }id={nombreCategoria}>
-                <p>{nombreCategoria}</p>
-            </div>
-            <Carousel 
-            responsive={responsiv}
-            infinite={true}
-            rtl={false}
-            autoPlay={false}
-            ssr={true}
             >
                 {subResultados.map((subResultado, index) => (
-            <Card key={index} juegos={subResultado} />
-                ))
-                }
+                    <Card key={index} juegos={subResultado} />
+                ))}
             </Carousel>
         </>
-)}
+    )
+}

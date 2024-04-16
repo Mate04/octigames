@@ -2,23 +2,23 @@ function responsive() { return {
     superLargeDesktop: {
           // the naming can be any, depends on you.
           breakpoint: { max: 4000, min: 3000 },
-          items: 4
+          items: 2
         },
         desktop: {
           breakpoint: { max: 3000, min: 1700 },
-          items: 6
+          items: 2
         },
         tablets: {
           breakpoint: { max: 1700, min: 1400 },
-          items: 5
+          items: 2
         },
         tabletss: {
           breakpoint: { max: 1400, min: 1300 },
-          items: 4
+          items: 2
         },
         tablet: {
           breakpoint: { max: 1300, min: 700 },
-          items: 3
+          items: 2
         },
         mobile: {
           breakpoint: { max: 700, min: 480 },
@@ -26,7 +26,7 @@ function responsive() { return {
         },
         mobiles: {
           breakpoint: { max: 480, min: 0 },
-          items: 1
+          items: 2
         }
       };
     }

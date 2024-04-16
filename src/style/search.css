@@ -13,13 +13,18 @@
 }
 .search input[type="text"] {
     /* Estilos para el input de texto */
-    width: 150px;
-    height: 30px;
+    width: 170px;
+    height: 20px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #012851;
+    background-color: #012851;
+    color: #fff;
     border-radius: 10px;
 }
-
+.search input::placeholder {
+    color: #116abb;
+    font-size: 20px;
+}
 
 
 .resultadosForm {
