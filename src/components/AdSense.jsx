@@ -6,8 +6,8 @@ export default function AdSense({ id }) {
         <Script
             async
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-${id}`}
+            strategy="lazyOnload" 
             crossOrigin="anonymous"
-            strategy="afterInteractive"
         />
     );
 }

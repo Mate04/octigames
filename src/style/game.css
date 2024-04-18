@@ -12,6 +12,16 @@
 }
 
 .square {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+}
+
+.square:nth-child(2) {
   flex: 4;
   height: 70vh;
   padding: 10px;

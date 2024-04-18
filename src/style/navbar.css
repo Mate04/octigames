@@ -47,9 +47,11 @@
 
 
 .navbar ul .Categorias{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columnas */
-  gap: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 .navbar ul .Categorias .categoria {
   display: flex;
@@ -58,14 +60,26 @@
   flex-direction: column;
   transition: transform 0.2s ease;
   border-radius: 10px;
+  color: #fff;
+  width: auto;
+  height: auto;
+  aspect-ratio: 1/1;
 }
 .navbar ul .Categorias .categoria:hover {
-  transform: scale(1.2); 
+  transform: scale(1.1); 
   background-color: #004c8f;
 }
-.navbar ul .Categorias .categoria .text{
+.navbar ul .Categorias .categoria .text {
+  font-size: 0.8em;
   font-weight: bold;
+  margin-top: 5px;
   color: #fff;
+}
+
+.navbar ul .Categorias .categoria .icon {
+  text-align: center;
+  font-size: 25px;
+
 }
 
 .Dropdown-control  {
