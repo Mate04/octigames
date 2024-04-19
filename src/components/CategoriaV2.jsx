@@ -6,7 +6,7 @@ import responsive from '@/api/responsive';
 import Card from './cardV2';
 import { technica } from "@/assets/localFont";
 import getCategoria from '@/api/getCategoria';
-export default function CategoriaV2({ numeroCategoria = 'All', nombreCategoria = 'Todos los Juegos', popularity = 'branding' }) {
+export default function CategoriaV2({ component, numeroCategoria = 'All', nombreCategoria = 'Todos los Juegos', popularity = 'branding' }) {
     const responsiv = responsive()
     const chunkArray = (array, chunkSize) => {
         const chunks = [];
@@ -37,7 +37,7 @@ export default function CategoriaV2({ numeroCategoria = 'All', nombreCategoria =
                 ssr={true}
             >
                 {subResultados.map((subResultado, index) => (
-                    <Card key={index} juegos={subResultado} />
+                    <Card key={index} juegos={subResultado} component={component} />
                 ))}
             </Carousel>
         </>

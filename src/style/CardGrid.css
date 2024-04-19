@@ -1,0 +1,12 @@
+.parent {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    padding: 20px;
+}
+
+.parent > a:hover {
+    transform: scale(1.1);
+    transition: all 0.5s;
+}

@@ -1,5 +1,6 @@
 'use client'
 import CategoriaV2 from '@/components/CategoriaV2';
+import CardGrid from '@/components/CardGrid';
 
 export default  function Page() {
   const categorias = {
@@ -30,14 +31,19 @@ export default  function Page() {
   
   return (
     <>
+      <h2 style={{ marginLeft: 40, marginBottom: 0  }}>Populares</h2>
       <CategoriaV2 numeroCategoria={'mostplayed'} nombreCategoria={'Los mas populares'} popularity=''/>
+      <h2 style={{ marginLeft: 40, marginBottom: 0 }}>Otros</h2>
       <CategoriaV2 numeroCategoria={'All'} nombreCategoria={'Categoria'}/>
       {
         // Recorrer los primeros 6 elementos del array
         categoriasArray.map(([llave, valor]) => {
           if (['0','12','5','17'].includes(llave)) {
             return (
-              <CategoriaV2 key={llave} numeroCategoria={llave} nombreCategoria={valor}/>
+              <>
+              <h2 style={{ marginLeft: 40, marginBottom: 0  }}>Todos los juegos</h2>
+                <CardGrid key={llave} numeroCategoria={llave} nombreCategoria={valor}/>
+              </>
             )
           }
         })

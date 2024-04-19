@@ -95,7 +95,7 @@ a.categoria.backGround {
   background: #002546;
 }
 
-@media (max-width: 1800px) {
+@media (max-width: 1200px) {
   .navbar ul .Categorias{
     display: none;
   }
