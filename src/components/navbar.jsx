@@ -87,7 +87,7 @@ export default function NavBar() {
         <ul>
           <li>
             <Link href={'/'} className='TITULO'>
-              {/* <Image  src={logo} alt='octiGames' width={125} className='tituloOcti-link-img'/> */}
+              <Image  src={logo} alt='octiGames' width={70} className='tituloOcti-link-img' style={{ marginLeft: 20 }}/>
               <p className={`title`}>octiGames</p>
             </Link>
           </li>

@@ -27,7 +27,7 @@
 }
 .TITULO{
   display: flex;
-  gap: 20px;
+  gap: 0px;
   justify-content: center;
   align-items: center;
   text-decoration: none;

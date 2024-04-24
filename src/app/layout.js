@@ -15,7 +15,8 @@ export default function RootLayout({ children }) {
       <head>
         <AdSense id="9727536664872197" />
       </head>
-      <body className={inter.className}>
+      <body className={inter.className} >
+        <div style={{ position: "fixed", width: "100vw", height: "100vh", top: 0, left: 0, right: 0, backgroundImage: `url("/background.jpeg")`, backgroundSize: "cover", zIndex: -1 }} />
         <NavBar/>
         {children}
         </body>
