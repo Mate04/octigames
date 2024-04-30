@@ -87,14 +87,14 @@ export default function NavBar() {
         <ul>
           <li>
             <Link href={'/'} className='TITULO'>
-              <Image  src={logo} alt='octiGames' width={70} className='tituloOcti-link-img' style={{ marginLeft: 20 }}/>
-              <p className={`title`}>octiGames</p>
+              <Image src={logo} alt='octiGames' width={70} className='tituloOcti-link-img' style={{ marginLeft: 20 }} />
+              <p className={`${bangersRegular.className} title`}>octiGames</p>
+
             </Link>
           </li>
           {/* {effect ==  '/game' ? <li>
           <Banner width={320} height={50} keyAD={'6255d3c5fb923d4cc0f9a4c7fd594c5f'}/>
         </li> : <></>} */}
-
           <li className='Categorias'>
             {Object.keys(categorias).map((categoria) => (
               <Link key={categoria} href={`#`} className='categoria'>
