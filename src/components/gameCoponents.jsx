@@ -5,7 +5,7 @@ import '../style/game.css'
 import Image from 'next/image';
 import logo from '../../public/logo.webp'
 import '../style/gampley.css'
-import Banner from '@/components/banner'
+import Banner from '../components/banner';
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import Share from '@/components/share';
@@ -28,12 +28,6 @@ export async function GameComponent() {
               </div>
             </Link>
           </div>
-          <div className='add-left'>
-            <ins className="adsbygoogle"
-              style={{ display: "inline-block", width: "200px", height: "700px" }}
-              data-ad-client="ca-pub-9727536664872197"
-              data-ad-slot="3362256745"></ins>
-          </div>
         </div>
         <div className="square">
           <iframe src={`https://html5.gamemonetize.co/${Md5}/`} width="100%" height="100%" scrolling="none" frameBorder="0" style={{ borderRadius: "10px" }}></iframe>
@@ -41,19 +35,11 @@ export async function GameComponent() {
             <p>{Title}</p>
           </div>
         </div>
-        <div className="square">
-          <ins className="adsbygoogle"
-            style={{ display: "inline-block", width: "200px", height: "700px" }}
-            data-ad-client="ca-pub-9727536664872197"
-            data-ad-slot="3362256745"></ins>
+        <div id="rectangulo3" className="cuadrado rectangulo3">
+          <Banner keyAD={'c3e602f43853a2460ed95f5522d1078e'} height={600} width={160} />
         </div>
       </div>
       <CategoriaV2 numeroCategoria="17" nombreCategoria="Juegos para vos" />
-      <Script
-        onLoad={() => {
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        }}
-      />
     </>
   )
 }
