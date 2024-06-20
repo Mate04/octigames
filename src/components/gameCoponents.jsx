@@ -8,8 +8,8 @@ import '../style/gampley.css'
 import Banner from '../components/banner';
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
-import Share from '@/components/share';
-import CategoriaV2 from '@/components/CategoriaV2';
+// import Share from '@/components/share';
+import CategoriaV2 from '../components/CategoriaV2';
 export async function GameComponent() {
   const url = useSearchParams()
   const Md5 = url.get('Md5')

@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react';
-import { searchGame } from "@/service/search"
+import { searchGame } from "../service/search"
 import Link from 'next/link';
 import { AiOutlineSearch } from "react-icons/ai";
 

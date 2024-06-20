@@ -2,14 +2,14 @@
 import '../../style/categoria.css'
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation'
-import getApiV2 from '@/api/getSideV2';
+import getApiV2 from '../../api/getSideV2';
 import Link from 'next/link';
-import Spinner from '@/components/spinner';
-import { technica} from '@/assets/localFont'
+import Spinner from '../../components/spinner';
+import { technica } from '../../assets/localFont'
 export default function Page() {
   const resultado = useParams();
-  const categoria = resultado['categoria'].replace('%20',' ');
-  const [res, setRes] = useState([])
+  const categoria = resultado['categoria'].replace('%20', ' ');
+  const [res, setRes] = useState([]);
   const info = {
     "All": "All",
     ".IO": "1",
@@ -32,10 +32,10 @@ export default function Page() {
     "Soccer": "16",
     "Sports": "17",
     "Stickman": "18"
-}
+  }
   const categoriaSearch = info[categoria] || 'All'
-  
-  return getApiV2('All',categoriaSearch).then(data => {
+
+  return getApiV2('All', categoriaSearch).then(data => {
     console.log(data.length);
     return (
       (
@@ -43,23 +43,24 @@ export default function Page() {
           <div className={`TituloCategoria ${technica.className}`}>
             {categoria}
           </div>
-          <div className='Container-Categoria'>{ 
-            data.map((datas, index)=>{
+          <div className='Container-Categoria'>{
+            data.map((datas, index) => {
               const url = datas.url.split("/")
               const md5 = url[url.length - 2];
-              return(
-              <div key={index} >
-                <Link className='key-Children' href={`game?Title=${datas.title}&Description=${datas.description}&Md5=${md5}`}>
-                  <img src={datas.thumb} alt={datas.title} className='Imagen-key'/>
-                <p>
-                  {datas.title}
-                </p>
-                </Link>
-              </div>
-            )})
-            }</div>
+              return (
+                <div key={index} >
+                  <Link className='key-Children' href={`game?Title=${datas.title}&Description=${datas.description}&Md5=${md5}`}>
+                    <img src={datas.thumb} alt={datas.title} className='Imagen-key' />
+                    <p>
+                      {datas.title}
+                    </p>
+                  </Link>
+                </div>
+              )
+            })
+          }</div>
         </div>
-        )
+      )
     )
   })
-  }
+}

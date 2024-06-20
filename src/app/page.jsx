@@ -1,6 +1,6 @@
 'use client'
-import CategoriaV2 from '@/components/CategoriaV2';
-import CardGrid from '@/components/CardGrid';
+import CategoriaV2 from '../components/CategoriaV2';
+import CardGrid from '../components/CardGrid';
 
 export default function Page() {
   const categorias = {

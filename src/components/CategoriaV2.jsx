@@ -1,11 +1,11 @@
 import Carousel from 'react-multi-carousel';
 import '../style/carousel.css'
 import 'react-multi-carousel/lib/styles.css';
-import getApiV2 from '@/api/getSideV2';
-import responsive from '@/api/responsive';
+// import getApiV2 from '@/api/getSideV2';
+import responsive from '../api/responsive';
 import Card from './cardV2';
-import { technica } from "@/assets/localFont";
-import getCategoria from '@/api/getCategoria';
+// import { technica } from "@/assets/localFont";
+import getCategoria from '../api/getCategoria';
 export default function CategoriaV2({ component, numeroCategoria = 'All', nombreCategoria = 'Todos los Juegos', popularity = 'branding' }) {
     const responsiv = responsive()
     const chunkArray = (array, chunkSize) => {

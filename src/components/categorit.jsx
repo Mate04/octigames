@@ -2,9 +2,9 @@ import '../style/carousel.css'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Card from './card'
-import { getApi } from '@/api/getSide';
+import { getApi } from '../api/getSide';
 import VerMas from './carousel/verMas';
-import { technica } from "@/assets/localFont";
+import { technica } from "../assets/localFont";
 export default async function Categoria({ nombreCategoria = null, }) {
   const resultados = await getApi(40, nombreCategoria);
   const resultadosFiltrados = resultados.map(resultado => {

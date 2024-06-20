@@ -1,4 +1,4 @@
-import getCategoria from "@/api/getCategoria"
+import getCategoria from "../api/getCategoria"
 
 export function searchGame(title){
     if (!title.trim()) {

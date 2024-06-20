@@ -1,6 +1,6 @@
 import '../style/CardGrid.css'
 import CardHome from './CardHome';
-import getCategoria from '@/api/getCategoria';
+import getCategoria from '../api/getCategoria';
 export default function CategoriaGrid({ component, numeroCategoria = 'All', nombreCategoria = 'Todos los Juegos', popularity = 'branding' }) {
     const chunkArray = (array, chunkSize) => {
         const chunks = [];

@@ -7,8 +7,8 @@ import logo from '../../public/logo.webp'
 import SVG from './svg/component';
 import Banner from './banner';
 import { usePathname } from 'next/navigation';
-import { bangersRegular } from '@/assets/localFont'
-import DropDown from '@/components/dropDown'
+import { bangersRegular } from '../assets/localFont'
+import DropDown from '../components/dropDown'
 import Search from './search';
 
 import { IoIosPeople, IoIosMan } from "react-icons/io";
