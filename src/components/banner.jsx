@@ -13,7 +13,7 @@ export default function Banner({ keyAD, height, width }) {
       script.type = 'text/javascript';
       script.id = scriptId;
       script.src = `//www.topcreativeformat.com/${keyAD}/invoke.js`;
-      conf.innerHTML = `atOptions = ${JSON.stringify({ key: keyAD, format: 'js', async: true, height, width, params: {} })}`;
+      conf.innerHTML = `atOptions = ${JSON.stringify({ key: keyAD, format: 'iframe', height, width, params: {} })}`;
 
 
       banner.current.innerHTML = '';
@@ -21,7 +21,7 @@ export default function Banner({ keyAD, height, width }) {
       banner.current.append(conf);
       banner.current.append(script);
 
-      console.log('banner: ', banner.current)
+      console.log('banner: ', banner.current, keyAD, height, width)
 
       return () => {
         const loadedScript = document.getElementById(scriptId);
