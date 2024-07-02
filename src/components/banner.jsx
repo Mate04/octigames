@@ -13,7 +13,7 @@ export default function Banner({ keyAD, height, width }) {
       script.type = 'text/javascript';
       script.id = scriptId;
       script.src = `//www.topcreativeformat.com/${keyAD}/invoke.js`;
-      conf.innerHTML = `atOptions = ${JSON.stringify({ key: keyAD, format: 'iframe', height, width, params: {} })}`;
+      conf.innerHTML = `atOptions = ${JSON.stringify({ key: keyAD, format: 'js', async: true, height, width, params: {} })}`;
 
 
       banner.current.innerHTML = '';
