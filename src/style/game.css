@@ -59,6 +59,7 @@
   /* Centra horizontalmente */
   align-items: center;
   position: relative;
+  margin-bottom: 10px;
 }
 
 .imagen {
@@ -73,8 +74,8 @@
   display: flex;
   background-color: #004683;
   border-radius: 20px;
-  padding: 10px;
   justify-content: center;
+  width: 160px;
   /* Centra horizontalmente */
   align-items: center;
   position: relative;
@@ -91,8 +92,8 @@
 
 .button-home {
   display: flex;
-  width: 30% !important;
-  padding: 4px;
+  width: 160px;
+  height: auto;
   background-color: #004d93;
   align-items: center;
   justify-content: center;
