@@ -28,7 +28,7 @@ export async function GameComponent() {
               </div>
             </Link>
           </div>
-          <Banner keyAD={'80bb9c56da40368cfa31e6e1e2fda85e'} height={600} width={160} />
+          <Banner keyAD={'3239b73fcf003fd2be61d27a156dabc0'} height={300} width={160} />
         </div>
         <div className="square">
           <iframe src={`https://html5.gamemonetize.co/${Md5}/`} width="100%" height="100%" scrolling="none" frameBorder="0" style={{ borderRadius: "10px" }}></iframe>
