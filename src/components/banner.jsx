@@ -1,23 +1,28 @@
-import { useRef, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function Banner({ keyAD, height, width }) {
   const banner = useRef();
 
   useEffect(() => {
-    const uniqueId = `banner-${Math.random().toString(36).substr(2, 9)}`;
     if (banner.current) {
+
+      const existingScript = document.querySelector(`script[src="//www.topcreativeformat.com/${keyAD}/invoke.js"]`);
+      if (existingScript) {
+        existingScript.remove();
+      }
+
+
       const conf = document.createElement('script');
       const script = document.createElement('script');
       script.type = 'text/javascript';
       script.src = `//www.topcreativeformat.com/${keyAD}/invoke.js`;
       conf.innerHTML = `atOptions = ${JSON.stringify({ key: keyAD, format: 'iframe', height, width, params: {} })}`;
 
-      const div = document.createElement('div');
-      div.id = uniqueId;
+
       banner.current.innerHTML = '';
-      banner.current.append(div);
-      div.append(conf);
-      div.append(script);
+
+      banner.current.append(conf);
+      banner.current.append(script);
     }
   }, [keyAD, height, width]);
 
