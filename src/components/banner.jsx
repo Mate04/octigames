@@ -5,7 +5,6 @@ export default function Banner({ keyAD, height, width }) {
 
   useEffect(() => {
     if (banner.current) {
-
       const scriptId = `script-${Math.random().toString(36).substr(2, 9)}`;
 
 
@@ -22,6 +21,7 @@ export default function Banner({ keyAD, height, width }) {
       banner.current.append(conf);
       banner.current.append(script);
 
+      console.log('banner: ', banner.current)
 
       return () => {
         const loadedScript = document.getElementById(scriptId);
@@ -30,7 +30,7 @@ export default function Banner({ keyAD, height, width }) {
         }
       };
     }
-  }, [keyAD, height, width]);
+  }, [keyAD, height, width, banner]);
 
   const bannerStyle = {
     height: `${height}px`,
