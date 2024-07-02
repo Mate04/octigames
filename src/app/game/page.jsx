@@ -1,8 +1,11 @@
 "use client"
 import { GameComponent } from '../../components/gameCoponents';
+import { Suspense } from 'react'
 export default function Page() {
   return (
-    <GameComponent />
+    <Suspense>
+      <GameComponent />
+    </Suspense>
   )
 }
 
