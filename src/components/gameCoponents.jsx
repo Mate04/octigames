@@ -37,7 +37,7 @@ export async function GameComponent() {
           </div>
         </div>
         <div id="rectangulo3" className="cuadrado rectangulo3">
-          <Banner keyAD={'80bb9c56da40368cfa31e6e1e2fda85e'} height={600} width={160} />
+          {/* <Banner keyAD={'80bb9c56da40368cfa31e6e1e2fda85e'} height={600} width={160} /> */}
         </div>
       </div>
       <CategoriaV2 numeroCategoria="17" nombreCategoria="Juegos para vos" />
