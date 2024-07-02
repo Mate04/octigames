@@ -6,15 +6,13 @@ export default function Banner({ keyAD, height, width }) {
   useEffect(() => {
     if (banner.current) {
 
-      const existingScript = document.querySelector(`script[src="//www.topcreativeformat.com/${keyAD}/invoke.js"]`);
-      if (existingScript) {
-        existingScript.remove();
-      }
+      const scriptId = `script-${Math.random().toString(36).substr(2, 9)}`;
 
 
       const conf = document.createElement('script');
       const script = document.createElement('script');
       script.type = 'text/javascript';
+      script.id = scriptId;
       script.src = `//www.topcreativeformat.com/${keyAD}/invoke.js`;
       conf.innerHTML = `atOptions = ${JSON.stringify({ key: keyAD, format: 'iframe', height, width, params: {} })}`;
 
@@ -23,6 +21,14 @@ export default function Banner({ keyAD, height, width }) {
 
       banner.current.append(conf);
       banner.current.append(script);
+
+
+      return () => {
+        const loadedScript = document.getElementById(scriptId);
+        if (loadedScript) {
+          loadedScript.remove();
+        }
+      };
     }
   }, [keyAD, height, width]);
 
