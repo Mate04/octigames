@@ -1,12 +1,12 @@
 import { useEffect, useRef } from 'react'
-export default function Banner() {
+export default function Banner({ keyAD, height, width }) {
     const banner = useRef;
 
     const atOptions = {
-        key: 'KEY_HERE',
+        key: keyAD,
         format: 'iframe',
-        height: 50,
-        width: 320,
+        height: height,
+        width: width,
         params: {},
     }
     useEffect(() => {
