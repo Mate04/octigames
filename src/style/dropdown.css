@@ -1,6 +1,7 @@
 .dropdown {
     position: relative;
-    width: 220px;
+    width: auto;
+    min-width: 145px;
 }
   .dropdown button {
     background: none;

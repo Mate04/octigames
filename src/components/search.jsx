@@ -12,14 +12,13 @@ export default function Search() {
         setInputValue(event.target.value);
         const results = searchGame(event.target.value);
         setRes(results)
-        // Aquí puedes manejar los resultados como prefieras
     }
 
     return (
         <>
             <form action="" className='search' autoComplete='off'>
                 <label htmlFor="game-search"></label>
-                <input type="text" id="game-search"  placeholder="buscar &#x1F50D;" value={inputValue} onChange={handleInputChange} />
+                <input type="text" id="game-search" placeholder="buscar &#x1F50D;" value={inputValue} onChange={handleInputChange} />
             </form>
             {inputValue.trim() && (
                 <div className='resultadosForm'>

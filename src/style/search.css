@@ -6,10 +6,7 @@
 }
 
 .search {
-    width: 220px;
-    position: relative;
-    margin: 30px 10px;
-    margin-top: 12px;
+    width: 100%;
 }
 .search input[type="text"] {
     /* Estilos para el input de texto */
@@ -23,7 +20,7 @@
 }
 .search input::placeholder {
     color: #116abb;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 

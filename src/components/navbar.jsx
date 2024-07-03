@@ -83,7 +83,6 @@ export default function NavBar() {
   return (
     <>
       <nav className="navbar container" >
-
         <ul>
           <li>
             <Link href={'/'} className='TITULO'>
@@ -104,15 +103,10 @@ export default function NavBar() {
             ))}
           </li>
           <div className='categoriesContainer'>
-            <li className='drop'>
-              <DropDown listaJuegos={gameCategories} />
-            </li>
-            <li className='qsy'>
-              <Search />
-            </li>
+            <DropDown listaJuegos={gameCategories} />
+            <Search />
           </div>
         </ul>
-
       </nav>
     </>
   )
