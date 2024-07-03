@@ -1,41 +1,26 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react'
+export default function Banner() {
+    const banner = useRef;
 
-export default function Banner({ keyAD, height, width }) {
-  const banner = useRef();
-
-  useEffect(() => {
-    if (banner.current) {
-      const scriptId = `script-${Math.random().toString(36).substr(2, 9)}`;
-
-
-      const conf = document.createElement('script');
-      const script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.id = scriptId;
-      script.src = `//www.topcreativeformat.com/${keyAD}/invoke.js`;
-      conf.innerHTML = `atOptions = ${JSON.stringify({ key: keyAD, format: 'iframe', height, width, params: {} })}`;
-
-
-      banner.current.innerHTML = '';
-
-      banner.current.append(conf);
-      banner.current.append(script);
-
-      console.log('banner: ', banner.current, keyAD, height, width)
-
-      return () => {
-        const loadedScript = document.getElementById(scriptId);
-        if (loadedScript) {
-          loadedScript.remove();
-        }
-      };
+    const atOptions = {
+        key: 'KEY_HERE',
+        format: 'iframe',
+        height: 50,
+        width: 320,
+        params: {},
     }
-  }, [keyAD, height, width, banner]);
+    useEffect(() => {
+        if (banner.current && !banner.current.firstChild) {
+            const conf = document.createElement('script')
+            const script = document.createElement('script')
+            script.type = 'text/javascript'
+            script.src = `//www.topcreativeformat.com/${atOptions.key}/invoke.js`
+            conf.innerHTML = `atOptions = ${JSON.stringify(atOptions)}`
 
-  const bannerStyle = {
-    height: `${height}px`,
-    width: `${width}px`
-  };
+            banner.current.append(conf)
+            banner.current.append(script)
+        }
+    }, [banner])
 
-  return <div className={'banner'} ref={banner} style={bannerStyle}></div>;
+    return <div className="mx-2 my-5 border border-gray-200 justify-center items-center text-white text-center" ref={banner}></div>
 }
