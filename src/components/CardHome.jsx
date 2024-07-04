@@ -7,7 +7,6 @@ function CardHome({ juegos, component }) {
             {juegos.map((juego, index) => {
                 const url = juego.url.split("/")
                 const md5 = url[url.length - 2];
-                console.log("juego: ", juego);
                 return (
                     <Link style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }} href={`/game?Title=${juego.title}&Description=${juego.description}&Md5=${md5}`} key={index}>
                         <img src={juego.thumb} alt={`${juego.title}`} style={{ width: "80%", height: "auto", objectFit: "fill", aspectRatio: 1/1, borderRadius: 20 }} />

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../../public/logo.webp'
 
-const LeftColumnView = () => {
+const LeftColumnView = ({ Md5 }) => {
     return (
         <>
             <div className='home'>
@@ -18,7 +18,7 @@ const LeftColumnView = () => {
                     </div>
                 </Link>
             </div>
-            <Banner keyAD={'3239b73fcf003fd2be61d27a156dabc0'} height={300} width={160} />
+            {Md5 ? <Banner keyAD={'3239b73fcf003fd2be61d27a156dabc0'} height={300} width={160} /> : null}
         </>
     )
 }

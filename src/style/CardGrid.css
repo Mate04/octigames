@@ -1,12 +1,27 @@
 .parent {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    /* grid-template-columns: repeat(5, 1fr); */
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
     padding: 20px;
+    max-width: 100%;
 }
 
-.parent > a:hover {
+.parent>a:hover {
     transform: scale(1.1);
     transition: all 0.5s;
 }
+
+@media (min-width: 768px) {
+    .parent {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .parent {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+

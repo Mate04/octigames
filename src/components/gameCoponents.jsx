@@ -19,7 +19,7 @@ export async function GameComponent() {
     <>
       <div className='container-games'>
         <div className="square">
-          <LeftColumnView />
+          <LeftColumnView Md5={Md5} />
         </div>
         <div className="square">
           <iframe src={`https://html5.gamemonetize.co/${Md5}/`} width="100%" height="100%" scrolling="none" frameBorder="0" style={{ borderRadius: "10px" }}></iframe>
