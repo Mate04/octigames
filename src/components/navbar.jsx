@@ -91,7 +91,6 @@ export default function NavBar() {
 
             </Link>
           </li>
-          <Banner width={320} height={50} keyAD={'6255d3c5fb923d4cc0f9a4c7fd594c5f'} />
           <li className='Categorias'>
             {Object.keys(categorias).map((categoria) => (
               <Link key={categoria} href={`#`} className='categoria'>

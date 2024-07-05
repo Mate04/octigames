@@ -2,12 +2,11 @@ import Carousel from 'react-multi-carousel';
 import '../style/carousel.css'
 import 'react-multi-carousel/lib/styles.css';
 // import getApiV2 from '@/api/getSideV2';
-import responsive from '../api/responsive';
+import { responsive } from '../api/responsive';
 import Card from './cardV2';
 // import { technica } from "@/assets/localFont";
 import getCategoria from '../api/getCategoria';
 export default function CategoriaV2({ component, numeroCategoria = 'All', nombreCategoria = 'Todos los Juegos', popularity = 'branding' }) {
-    const responsiv = responsive()
     const chunkArray = (array, chunkSize) => {
         const chunks = [];
         for (let i = 0; i < array.length; i += chunkSize) {
@@ -25,16 +24,17 @@ export default function CategoriaV2({ component, numeroCategoria = 'All', nombre
         width: item.width,
         height: item.height
     }));
-    const subResultados = chunkArray(resultado, 3)
+    const subResultados = chunkArray(resultado, 1)
 
     return (
         <>
             <Carousel
-                responsive={responsiv}
+                responsive={responsive}
                 infinite={true}
                 rtl={false}
                 autoPlay={false}
-                ssr={true}
+                ssr={false}
+                style={{ width: "100%", height: "auto", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}
             >
                 {subResultados.map((subResultado, index) => (
                     <Card key={index} juegos={subResultado} component={component} />
