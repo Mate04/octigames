@@ -34,7 +34,7 @@ export default function CategoriaV2({ component, numeroCategoria = 'All', nombre
                 rtl={false}
                 autoPlay={false}
                 ssr={false}
-                style={{ width: "100%", height: "auto", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}
+                style={{ width: "100%", height: "auto", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", fontWeight: "bold" }}
             >
                 {subResultados.map((subResultado, index) => (
                     <Card key={index} juegos={subResultado} component={component} />

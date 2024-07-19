@@ -11,7 +11,7 @@ function Card({ juegos, component }) {
           <Link href={`/game?Title=${juego.title}&Description=${juego.description}&Md5=${md5}`}>
             <img src={juego.thumb} alt={`${juego.title}`} style={{ width: "100%", height: "auto", objectFit: "fill", aspectRatio: 1/1, borderRadius: 20 }} />
           </Link>
-          <p>{juego.title}</p>
+          <p style={{ fontWeight: "bold" }}>{juego.title}</p>
         </div>
       )
     }

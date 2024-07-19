@@ -93,7 +93,7 @@ export default function NavBar() {
           </li>
           <li className='Categorias'>
             {Object.keys(categorias).map((categoria) => (
-              <Link key={categoria} href={`#`} className='categoria'>
+              <Link key={categoria} href={categoria} className='categoria'>
                 <div className='icon'>
                   {categorias[categoria].icon}
                 </div>

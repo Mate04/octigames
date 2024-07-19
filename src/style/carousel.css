@@ -8,6 +8,7 @@
 .titulo {
   align-self: center; /* Centra el título verticalmente */
   text-align: center; /* Centra el texto horizontalmente */
+  font-weight: bold;
   
 }
 .titulo p {

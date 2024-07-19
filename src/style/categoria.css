@@ -1,105 +1,134 @@
 .Container-Categoria {
-    padding: 10px 35px;
-    display: grid;
-    grid-gap: 30px;
-    grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
-  }
+  padding: 10px 35px;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
 a {
   text-decoration: none;
   color: inherit;
 
 }
-  .key-Children {
-    height: 90%;
-    width: 100%;
-    background-color: #00729e;
-    display: flex;
-    align-items: center;
-    gap: 0; 
-    flex-direction: column;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 1.3em;
-    font-weight: bold;
-    color: white;
-    transition: all 0.3s ease-in-out;
-    z-index: 3;
-  }
-  .key-Children:hover {
-    background-color: #01335f;
-    font-size: 1.5em;
-    width: 105%;
-    z-index: 99;
-  }
-  .Imagen-key {
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+.key-Children {
+  height: 90%;
+  width: 100%;
+  background-color: #00729e;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.3em;
+  font-weight: bold;
+  color: white;
+  transition: all 0.3s ease-in-out;
+  z-index: 3;
+}
+
+.key-Children:hover {
+  background-color: #01335f;
+  font-size: 1.5em;
+  width: 105%;
+  z-index: 99;
+}
+
+.Imagen-key {
   width: 100%;
   object-fit: contain;
   border-radius: 10px;
   transition: width 0.3s ease-in-out;
-  }
-  .Imagen-key:hover {
-    width: 110%;
-  }
+}
 
-  .containeerr{
-    display: flex;
-    flex-direction: column;
-  }
-  .TituloCategoria{
-    font-size: 50px;
-    color: white;
-    letter-spacing: -1px; /* Espaciado de letras reducido */
-    -webkit-text-stroke: 1.3px black;
-    filter: drop-shadow(
-    0 0 10px rgba(0,0,0,0.8)
-  );
+.Imagen-key:hover {
+  width: 110%;
+}
+
+.containeerr {
+  display: flex;
+  flex-direction: column;
+}
+
+.TituloCategoria {
+  font-size: 50px;
+  color: white;
+  letter-spacing: -1px;
+  /* Espaciado de letras reducido */
+  -webkit-text-stroke: 1.3px black;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
   filter: 2px solid black;
-    padding: 20px 0 0 40px;
-  }
-  .button-ver-mas {
-    align-self: flex-end;
-    margin: 5px 40px;
-    
-  }
-  .button-ver-mas button {
-    
-    border: none; /* Elimina el borde */
-    outline: none; /* Elimina el contorno que aparece al hacer clic */
-    text-decoration: none; /* Elimina la decoración del texto */
-    background: none; /* Elimina el fondo */
-    font-size: 1.5em; /* Hace la letra más grande */
-    color: initial; /* Color inicial de la letra */
-    transition: font-size 0.3s ease, color 0.3s ease; 
-    border-radius: 10px;
-    color: white;
-  }
-  .button-ver-mas button:hover {
-    font-size: 2em; /* Hace la letra aún más grande al pasar el cursor */
-     /* Cambia el color de la letra a blanco al pasar el cursor */
-    cursor: pointer;
-    text-decoration: underline;
-  }
-  .button-ver-mas p {
-    color: white;
-    font-size: 2em;
-    font-weight: bold;
-  }
- @media (max-width:800px){
-  .key-Children{
+  padding: 20px 0 0 40px;
+}
+
+.button-ver-mas {
+  align-self: flex-end;
+  margin: 5px 40px;
+
+}
+
+.button-ver-mas button {
+
+  border: none;
+  /* Elimina el borde */
+  outline: none;
+  /* Elimina el contorno que aparece al hacer clic */
+  text-decoration: none;
+  /* Elimina la decoración del texto */
+  background: none;
+  /* Elimina el fondo */
+  font-size: 1.5em;
+  /* Hace la letra más grande */
+  color: initial;
+  /* Color inicial de la letra */
+  transition: font-size 0.3s ease, color 0.3s ease;
+  border-radius: 10px;
+  color: white;
+}
+
+.button-ver-mas button:hover {
+  font-size: 2em;
+  /* Hace la letra aún más grande al pasar el cursor */
+  /* Cambia el color de la letra a blanco al pasar el cursor */
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.button-ver-mas p {
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+@media (max-width:800px) {
+  .key-Children {
     font-size: 1em;
   }
-  .key-Children:hover{
+
+  .key-Children:hover {
     font-size: 110%;
   }
-  .Container-Categoria{
-  grid-template-columns: repeat(auto-fill,minmax(80px,1fr));
+
+  .Container-Categoria {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
   }
- }
- @media (max-width:600px){
-  .key-Children{
+}
+
+@media (max-width:600px) {
+  .key-Children {
     font-size: 0.85em;
   }
-  .Container-Categoria{
-  grid-template-columns: repeat(auto-fill,minmax(60px,1fr));
+
+  .Container-Categoria {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
   }
- }
+}

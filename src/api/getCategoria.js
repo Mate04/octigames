@@ -31676,7 +31676,7 @@ export default function getCategoria(numero){
             {
                 "id": "10451",
                 "title": "Puzzles - Logic puzzle game",
-                "description": "A beautiful puzzle game. How to play: It’s simple! Make a line from 5 or more bubbles of one color. The line can be horizontal, vertical or diagonal. You can also combine lines. With each turn, 3 new bubbles will be added except when the line has been removed. The bubble’s color and placement are randomly selected.  Features: · Fun for all ages; · World-wide players, compare your score with friends! · Achievements; · Beautiful design; · Sweet sounds; · Easy to use; · Games are automatically saved; · Undo move button, to help you correct your mistakes.",
+                "description": "A beautiful puzzle game. How to play: It’s simple! Make a line from 5 or more bubbles of one color. The line can be horizontal, vertical or diagonal. You can also combine lines. With each turn, 3 new bubbles will be added except when the line has been removed. The bubble’s color and placement are randomly selected. Features: · Fun for all ages; · World-wide players, compare your score with friends! · Achievements; · Beautiful design; · Sweet sounds; · Easy to use; · Games are automatically saved; · Undo move button, to help you correct your mistakes.",
                 "instructions": "",
                 "url": "https://html5.gamemonetize.com/cy2ohgntl73u626sjg89b2gljr526waj/",
                 "category": "Puzzles",

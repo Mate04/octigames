@@ -3,9 +3,7 @@ import { useState } from 'react'
 import '../style/dropdown.css'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import arrow from '../../public/arrow.png'
 import { BiSolidChevronDown } from "react-icons/bi";
-import Image from 'next/image'
 export default function DropDown({ listaJuegos }) {
     const [open, setOpen] = useState(false)
     const res = usePathname().replace('/', '')
