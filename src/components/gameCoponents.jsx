@@ -6,6 +6,7 @@ import '../style/gampley.css'
 import Banner from '../components/banner';
 import LeftColumnView from '../components/LeftColumnView';
 import { useSearchParams } from 'next/navigation'
+import { FaClipboard } from "react-icons/fa";
 import CategoriaV2 from '../components/CategoriaV2';
 export async function GameComponent() {
   const [mobile, setMobile] = useState(false)
@@ -32,6 +33,7 @@ export async function GameComponent() {
           <div className='info'>
             <p>{Title}</p>
           </div>
+          <button className='actions' onClick={() => navigator.clipboard.writeText(window.location.href)}><FaClipboard /> Copiar enlace de videojuego</button>
         </div>
         {!mobile ? (
           <div id="rectangulo3" className="cuadrado rectangulo3">

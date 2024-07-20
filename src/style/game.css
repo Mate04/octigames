@@ -23,6 +23,22 @@
   padding: 10px;
 }
 
+.actions {
+  background-color:#004d93;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  border: 0;
+  cursor: pointer;
+}
+
+.actions:hover {
+  background-color: #012850;
+}
+
 .square:nth-child(2) {
   flex: 4;
   height: 70vh;
