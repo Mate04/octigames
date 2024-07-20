@@ -82,11 +82,12 @@
   font-weight: bold;
   color: #fff;
   text-wrap: nowrap;
+  margin-top: 0px;
 }
 
 .navbar ul .Categorias .categoria .icon {
   text-align: center;
-  font-size: 25px;
+  font-size: 40px;
 
 }
 

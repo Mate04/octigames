@@ -6,6 +6,8 @@ import getApiV2 from '../../api/getSideV2';
 import Link from 'next/link';
 import Spinner from '../../components/spinner';
 import { technica } from '../../assets/localFont';
+import { BiChevronRight } from 'react-icons/bi';
+import { BiChevronLeft } from 'react-icons/bi';
 
 const info = {
   "All": "All",
@@ -90,9 +92,13 @@ const Page = () => {
         })}
       </div>
       <div className='pagination'>
-        <button onClick={handlePrevPage} disabled={currentPage === 1}>Anterior</button>
+        <button onClick={handlePrevPage} disabled={currentPage === 1}>
+          <BiChevronLeft />
+        </button>
         <span>Página {currentPage} de {Math.ceil(allData.length / itemsPerPage)}</span>
-        <button onClick={handleNextPage} disabled={currentPage === Math.ceil(allData.length / itemsPerPage)}>Siguiente</button>
+        <button onClick={handleNextPage} disabled={currentPage === Math.ceil(allData.length / itemsPerPage)}>
+          <BiChevronRight />
+        </button>
       </div>
     </div>
   );
