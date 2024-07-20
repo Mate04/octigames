@@ -35,11 +35,11 @@ export default function Page() {
       <CategoriaV2 numeroCategoria={'mostplayed'} nombreCategoria={'Los mas populares'} popularity='' />
       <h2 style={{ marginLeft: 40, marginBottom: 0 }}>Otros</h2>
       <CategoriaV2 numeroCategoria={'All'} nombreCategoria={'Categoria'} />
+      <h2 style={{ marginLeft: 40 }}>Todos los juegos</h2>
       {categoriasArray.map(([llave, valor]) => {
         if (['0', '12', '5', '17'].includes(llave)) {
           return (
             <>
-              <h2 style={{ marginLeft: 40, marginBottom: 0 }}>Todos los juegos</h2>
               <CardGrid key={llave} numeroCategoria={llave} nombreCategoria={valor} />
             </>
           )

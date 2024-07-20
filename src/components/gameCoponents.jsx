@@ -33,7 +33,7 @@ export async function GameComponent() {
           <div className='info'>
             <p>{Title}</p>
           </div>
-          <button className='actions' onClick={() => navigator.clipboard.writeText(window.location.href)}><FaClipboard /> Copiar enlace de videojuego</button>
+          <button className='actions' onClick={() => navigator.clipboard.writeText(window.location.href)}><FaClipboard />copia el enlace y comparti!</button>
         </div>
         {!mobile ? (
           <div id="rectangulo3" className="cuadrado rectangulo3">
