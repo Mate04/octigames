@@ -9,7 +9,7 @@ export default function CategoriaGrid({ component, numeroCategoria = 'All', nomb
     const [allData, setAllData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [loading, setLoading] = useState(true);
-    const itemsPerPage = 10;
+    const itemsPerPage = 45;
 
     useEffect(() => {
         const fetchData = async () => {
