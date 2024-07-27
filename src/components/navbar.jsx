@@ -36,46 +36,54 @@ export default function NavBar() {
   ];
 
   const categorias = {
-    shooter: {
+    Multiplayer: {
       name: 'Multiplayer',
+      category: '12',
       svg: 'M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941',
       icon: <IoIosPeople />
     },
-    casual: {
+    Sports: {
       name: 'Sports',
+      category: '17',
       svg: 'M2.25 18 9 11.25l4.306 4.306a11.95 16.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941',
       icon: <MdSportsFootball />
     },
-    Puzzle: {
+    Arcade: {
       name: 'Arcade',
+      category: '5',
       svg: 'M2.25 18 9 11.25l4.306 4.306a11.95 16.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941',
       icon: <FaGamepad />
     },
-    DressUp: {
+    TwoPlayer: {
       name: '2 Player',
+      category: '2',
       svg: 'M2.25 18 9 11.25l4.306 4.306a11.95 16.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941',
       icon: <IoPeople />
 
     },
     Adventure: {
       name: 'Adventure',
+      category: '4',
       svg: 'M2.25 18 9 11.25l4.306 4.306a11.95 16.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941',
       icon: <GiMountainClimbing />
     },
-    Battle: {
+    Action: {
       name: 'Action',
+      category: '0',
       svg: 'M2.25 18 9 11.25l4.306 4.306a11.95 16.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941',
       icon: <MdOutlineDirectionsRun />
 
     },
-    Art: {
+    Shooting: {
       name: 'Shooting',
+      category: '15',
       svg: 'M2.25 18 9 11.25l4.306 4.306a11.95 16.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941',
       icon: <GiPistolGun />
 
     },
-    Agility: {
+    Stickman: {
       name: 'Stickman',
+      category: '18',
       svg: 'M2.25 18 9 11.25l4.306 4.306a11.95 16.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941',
       icon: <IoIosMan />
     }

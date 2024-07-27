@@ -12,7 +12,7 @@ import { BiChevronLeft } from 'react-icons/bi';
 const info = {
   "All": "All",
   ".IO": "1",
-  "2 Player": "2",
+  "TwoPlayer": "2",
   "3D": "3",
   "Action": "0",
   "Adventure": "4",

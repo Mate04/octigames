@@ -12,6 +12,7 @@ const getApiV2 = async (category = 'All', popularity = 'branding') => {
   };
 
   try {
+    console.log('Obteniendo datos de la API con categoría:', { category });
     const response = await axios.get(apiUrl, { params: queryParams });
     return response.data.map((item) => ({
       id: item.id,
