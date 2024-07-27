@@ -1,15 +1,15 @@
 import '../style/CardGrid.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import CardHome from './CardHome';
 import getApiV2 from '../api/getSideV2';
-import { BiChevronRight } from 'react-icons/bi';
-import { BiChevronLeft } from 'react-icons/bi';
+import ReactLoading from 'react-loading';
 
 export default function CategoriaGrid({ component, numeroCategoria = 'All', nombreCategoria = 'Todos los Juegos', popularity = 'branding' }) {
     const [allData, setAllData] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
+    const [displayData, setDisplayData] = useState([]);
     const [loading, setLoading] = useState(true);
-    const itemsPerPage = 45;
+    const [loadingMore, setLoadingMore] = useState(false);
+    const itemsPerPage = 6;
 
     useEffect(() => {
         const fetchData = async () => {
@@ -17,6 +17,7 @@ export default function CategoriaGrid({ component, numeroCategoria = 'All', nomb
             try {
                 const data = await getApiV2(numeroCategoria, popularity);
                 setAllData(data);
+                setDisplayData(data.slice(0, itemsPerPage)); // Initial load
             } catch (error) {
                 console.error('Error fetching data:', error);
             } finally {
@@ -27,16 +28,27 @@ export default function CategoriaGrid({ component, numeroCategoria = 'All', nomb
         fetchData();
     }, [numeroCategoria, popularity]);
 
-    const handlePrevPage = () => {
-        if (currentPage > 1) setCurrentPage(currentPage - 1);
-    };
+    const loadMoreData = useCallback(() => {
+        if (loadingMore) return;
 
-    const handleNextPage = () => {
-        if (currentPage < Math.ceil(allData.length / itemsPerPage)) setCurrentPage(currentPage + 1);
-    };
+        setLoadingMore(true);
+        const nextPage = displayData.length / itemsPerPage;
+        const newItems = allData.slice(displayData.length, displayData.length + itemsPerPage);
+        setDisplayData(prevData => [...prevData, ...newItems]);
+        setLoadingMore(false);
+    }, [allData, displayData, itemsPerPage, loadingMore]);
 
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const currentData = allData.slice(startIndex, startIndex + itemsPerPage);
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 500 && !loading && !loadingMore) {
+                loadMoreData();
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [loading, loadingMore, loadMoreData]);
+
     const chunkArray = (array, chunkSize) => {
         const chunks = [];
         for (let i = 0; i < array.length; i += chunkSize) {
@@ -44,28 +56,21 @@ export default function CategoriaGrid({ component, numeroCategoria = 'All', nomb
         }
         return chunks;
     };
-    const subResultados = chunkArray(currentData, 3);
-
-    if (loading) {
-        return <div>Cargando...</div>;
-    }
+    const subResultados = chunkArray(displayData, 3);
 
     return (
         <div>
+            {loading &&
+                <div style={{ display: "flex", width: "100%", height: "auto", justifyContent: "center", alignItems: "center" }}>
+                    <ReactLoading type={"spin"} color="#fff" />
+                </div>
+            }
             <div className='parent'>
                 {subResultados.map((subResultado, index) => (
                     <CardHome key={index} juegos={subResultado} component={component} />
                 ))}
             </div>
-            <div className='pagination'>
-                <button onClick={handlePrevPage} disabled={currentPage === 1}>
-                    <BiChevronLeft />
-                </button>
-                <span>Página {currentPage} de {Math.ceil(allData.length / itemsPerPage)}</span>
-                <button onClick={handleNextPage} disabled={currentPage === Math.ceil(allData.length / itemsPerPage)}>
-                    <BiChevronRight />
-                </button>
-            </div>
+            {loadingMore && <div>Loading more...</div>}
         </div>
     );
 }
